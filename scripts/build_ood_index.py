@@ -37,6 +37,7 @@ TEST_CROPS = ("Orange", "Pepper", "Soybean", "Squash", "Tomato")
 PER_CLASS = 100
 
 TPR_TARGET = 0.95  # share of genuine validation images that must be accepted
+MIN_SIMILARITY = 0.70
 K = 10
 METHODS = ("msp", "energy", "knn")
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png"}
