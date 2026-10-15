@@ -1,0 +1,15 @@
+Class,Train,Val,Test
+maize_common_rust,382,300,NOT CREATED
+maize_gray_leaf_spot,410,103,NOT CREATED
+maize_healthy,560,300,NOT CREATED
+maize_northern_leaf_blight,302,300,NOT CREATED
+potato_early_blight,1196,300,NOT CREATED
+potato_healthy,700,215,NOT CREATED
+potato_late_blight,1200,300,NOT CREATED
+rice_brown_spot,980,246,NOT CREATED
+rice_healthy,1200,300,NOT CREATED
+rice_leaf_blast,1200,300,NOT CREATED
+rice_neck_blast,1200,300,NOT CREATED
+wheat_brown_rust,709,178,NOT CREATED
+wheat_healthy,889,223,NOT CREATED
+wheat_yellow_rust,738,185,NOT CREATED

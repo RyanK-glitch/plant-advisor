@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Secrets
+.streamlit/secrets.toml
+.env
+
+# Large data and generated artifacts
+data/
+runs/
+chroma_db/
+*.cache
+_backup_*/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+~$*

@@ -1,0 +1,16 @@
+class,original_files,duplicates_removed,unique,train,val,test
+maize_common_rust,682,300,382,268,57,57
+maize_gray_leaf_spot,513,0,513,359,77,77
+maize_healthy,860,270,590,414,88,88
+maize_northern_leaf_blight,602,300,302,212,45,45
+potato_early_blight,1496,87,1409,987,211,211
+potato_healthy,915,52,863,605,129,129
+potato_late_blight,1500,178,1322,926,198,198
+rice_brown_spot,1226,613,613,429,92,92
+rice_healthy,1500,377,1123,787,168,168
+rice_leaf_blast,1500,574,926,648,139,139
+rice_neck_blast,1500,584,916,642,137,137
+wheat_brown_rust,887,0,887,621,133,133
+wheat_healthy,1112,0,1112,778,167,167
+wheat_yellow_rust,923,0,923,647,138,138
+TOTAL,15216,3335,11881,8323,1779,1779

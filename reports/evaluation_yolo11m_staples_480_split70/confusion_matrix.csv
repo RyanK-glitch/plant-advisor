@@ -1,0 +1,15 @@
+,maize_common_rust,maize_gray_leaf_spot,maize_healthy,maize_northern_leaf_blight,potato_early_blight,potato_healthy,potato_late_blight,rice_brown_spot,rice_healthy,rice_leaf_blast,rice_neck_blast,wheat_brown_rust,wheat_healthy,wheat_yellow_rust
+maize_common_rust,57,0,0,0,0,0,0,0,0,0,0,0,0,0
+maize_gray_leaf_spot,0,75,0,2,0,0,0,0,0,0,0,0,0,0
+maize_healthy,0,0,88,0,0,0,0,0,0,0,0,0,0,0
+maize_northern_leaf_blight,0,3,0,42,0,0,0,0,0,0,0,0,0,0
+potato_early_blight,0,0,0,0,211,0,0,0,0,0,0,0,0,0
+potato_healthy,0,0,0,0,0,129,0,0,0,0,0,0,0,0
+potato_late_blight,0,0,0,0,1,1,196,0,0,0,0,0,0,0
+rice_brown_spot,0,0,0,0,0,0,0,79,5,8,0,0,0,0
+rice_healthy,0,0,0,0,0,0,0,5,154,9,0,0,0,0
+rice_leaf_blast,0,0,0,0,0,0,0,6,10,123,0,0,0,0
+rice_neck_blast,0,0,0,0,0,0,0,0,0,0,137,0,0,0
+wheat_brown_rust,0,0,0,0,0,0,0,0,0,0,0,133,0,0
+wheat_healthy,0,0,0,0,0,0,0,0,0,0,0,0,167,0
+wheat_yellow_rust,0,0,0,0,0,0,0,0,0,0,0,1,0,137

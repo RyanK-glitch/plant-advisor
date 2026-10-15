@@ -1,0 +1,573 @@
+/* ---------- Design tokens ---------- */
+:root {
+    --leaf-900: #14361f;
+    --leaf-700: #1f6b3a;
+    --leaf-600: #2e7d32;
+    --leaf-100: #e3f1e6;
+    --leaf-50: #f3f8f4;
+    --soil-600: #8a5a2b;
+    --amber-600: #b26a00;
+    --amber-100: #fff3dc;
+    --red-600: #b3261e;
+    --red-100: #fde7e5;
+    --ink: #1c2421;
+    --muted: #5d6b64;
+    --line: #dbe5de;
+    --card: #ffffff;
+    --page: #f6f8f5;
+    --radius: 14px;
+    --shadow: 0 1px 2px rgba(20, 54, 31, 0.06), 0 4px 16px rgba(20, 54, 31, 0.06);
+}
+
+/* ---------- Page ---------- */
+html, body, [data-testid="stAppViewContainer"] {
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: var(--ink);
+}
+
+[data-testid="stAppViewContainer"] {
+    background: var(--page);
+}
+
+[data-testid="stHeader"] {
+    background: transparent;
+}
+
+.block-container {
+    max-width: 960px;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    background: linear-gradient(135deg, var(--leaf-900) 0%, var(--leaf-700) 100%);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 2rem 2.25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin: 0 0 0.5rem;
+}
+
+.hero h1 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 0.5rem;
+    padding: 0;
+}
+
+.hero p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin: 0;
+    max-width: 40rem;
+}
+
+.hero-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+}
+
+.hero-chip {
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8rem;
+}
+
+/* ---------- Steps ---------- */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.step {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+
+.step-num {
+    flex: none;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background: var(--leaf-100);
+    color: var(--leaf-700);
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.step-text {
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin: 0.15rem 0 0;
+}
+
+/* ---------- Section headings ---------- */
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--leaf-900);
+    margin: 1.75rem 0 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ---------- File uploader ---------- */
+[data-testid="stFileUploaderDropzone"] {
+    background: var(--leaf-50);
+    border: 2px dashed #a9c9b1;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+[data-testid="stFileUploaderDropzone"]:hover {
+    border-color: var(--leaf-600);
+    background: var(--leaf-100);
+}
+
+/* ---------- Uploaded image ---------- */
+[data-testid="stImage"] img {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* ---------- Buttons ---------- */
+.stButton > button {
+    width: 100%;
+    background: var(--leaf-600);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.7rem 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.stButton > button:hover {
+    background: var(--leaf-700);
+    color: #fff;
+}
+
+.stButton > button:active {
+    transform: translateY(1px);
+}
+
+.stButton > button:focus-visible {
+    outline: 3px solid #9ccfa8;
+    outline-offset: 2px;
+    color: #fff;
+}
+
+/* ---------- Cards ---------- */
+.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+}
+
+.card-label {
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 0 0.35rem;
+}
+
+.card-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--leaf-900);
+    margin: 0;
+}
+
+.card-sub {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin: 0.25rem 0 0;
+}
+
+.card-sub code {
+    background: var(--leaf-50);
+    border-radius: 4px;
+    padding: 0.05rem 0.3rem;
+    font-size: 0.8rem;
+}
+
+/* Upload hint card */
+.hint-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+}
+
+.hint-card ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1.1rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.hint-card li {
+    margin-bottom: 0.25rem;
+}
+
+/* ---------- Confidence meter ---------- */
+.meter {
+    margin-top: 1rem;
+}
+
+.meter-head {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-bottom: 0.35rem;
+}
+
+.meter-head strong {
+    font-variant-numeric: tabular-nums;
+}
+
+.meter-track {
+    height: 10px;
+    background: #e8eee9;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.meter-fill {
+    height: 100%;
+    border-radius: 999px;
+}
+
+.meter-fill.high { background: var(--leaf-600); }
+.meter-fill.medium { background: var(--amber-600); }
+.meter-fill.low { background: var(--red-600); }
+
+.meter-note {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin: 0.5rem 0 0;
+}
+
+/* ---------- Diagnosis card with confidence ring ---------- */
+.card.diagnosis {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    padding: 1.5rem 1.75rem;
+}
+
+.diagnosis-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.diagnosis .card-value {
+    font-size: 1.9rem;
+    line-height: 1.15;
+}
+
+.diagnosis .card-sub {
+    margin-top: 0.35rem;
+}
+
+.diagnosis .card-sub code {
+    color: var(--leaf-700);
+    border-radius: 5px;
+    padding: 0.1rem 0.4rem;
+    margin-left: 0.4rem;
+    font-size: 0.75rem;
+}
+
+.confidence-note {
+    display: inline-block;
+    border-radius: 8px;
+    padding: 0.45rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin: 0.75rem 0 0;
+}
+
+.confidence-note.high { background: var(--leaf-100); color: var(--leaf-700); }
+.confidence-note.medium { background: var(--amber-100); color: var(--amber-600); }
+.confidence-note.low { background: var(--red-100); color: var(--red-600); }
+
+/* Confidence ring: a conic gradient masked by an inner circle */
+.ring {
+    --ring: var(--leaf-600);
+    flex: none;
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+    background: conic-gradient(var(--ring) calc(var(--pct) * 1%), #e8eee9 0);
+    display: grid;
+    place-items: center;
+}
+
+.ring.medium { --ring: var(--amber-600); }
+.ring.low { --ring: var(--red-600); }
+
+.ring-inner {
+    width: 102px;
+    height: 102px;
+    border-radius: 50%;
+    background: var(--card);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ring-inner strong {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--leaf-900);
+    font-variant-numeric: tabular-nums;
+}
+
+.ring-inner span {
+    font-size: 0.72rem;
+    color: var(--muted);
+}
+
+/* ---------- Status badges ---------- */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border-radius: 999px;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.badge.approved { background: var(--leaf-100); color: var(--leaf-700); }
+.badge.warning { background: var(--amber-100); color: var(--amber-600); }
+.badge.rejected { background: var(--red-100); color: var(--red-600); }
+
+/* Status accent on the rule card */
+.card.status-approved { border-left: 5px solid var(--leaf-600); }
+.card.status-warning { border-left: 5px solid var(--amber-600); }
+.card.status-rejected { border-left: 5px solid var(--red-600); }
+
+.rule-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.rule-chemical {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0;
+}
+
+/* ---------- Rule fact grid ---------- */
+.facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+    margin: 0.75rem 0;
+}
+
+.fact {
+    background: var(--leaf-50);
+    border-radius: 10px;
+    padding: 0.65rem 0.8rem;
+}
+
+.fact-label {
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.fact-value {
+    font-size: 0.92rem;
+    font-weight: 600;
+    margin: 0.15rem 0 0;
+}
+
+.rule-note {
+    background: var(--leaf-50);
+    border-left: 3px solid var(--soil-600);
+    border-radius: 6px;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.9rem;
+    margin: 0.75rem 0 0;
+}
+
+.rule-source {
+    font-size: 0.85rem;
+    margin: 0.75rem 0 0;
+}
+
+.rule-source a {
+    color: var(--leaf-700);
+    font-weight: 600;
+    word-break: break-all;
+}
+
+/* ---------- Weather outlook ---------- */
+.risk-row {
+    border-top: 1px solid var(--line);
+    padding: 0.85rem 0 0.25rem;
+    margin-top: 0.75rem;
+}
+
+.risk-row .rule-head {
+    margin-bottom: 0.25rem;
+}
+
+.risk-days {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.5rem;
+}
+
+.risk-day {
+    background: var(--leaf-50);
+    border-radius: 6px;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Advisory report container ---------- */
+.st-key-advisory_report {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.75rem;
+    box-shadow: var(--shadow);
+}
+
+.st-key-advisory_report h1,
+.st-key-advisory_report h2,
+.st-key-advisory_report h3 {
+    color: var(--leaf-900);
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 0.35rem;
+    margin-top: 1.25rem;
+}
+
+.st-key-advisory_report p,
+.st-key-advisory_report li {
+    font-size: 0.97rem;
+    line-height: 1.65;
+}
+
+/* ---------- Expander ---------- */
+[data-testid="stExpander"] details {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+/* ---------- Alerts ---------- */
+[data-testid="stAlert"] {
+    border-radius: 10px;
+}
+
+/* ---------- Sidebar ---------- */
+[data-testid="stSidebar"] {
+    background: var(--leaf-900);
+}
+
+[data-testid="stSidebar"] * {
+    color: #e6efe8;
+}
+
+.side-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.side-card h4 {
+    color: #fff;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 0 0.5rem;
+    padding: 0;
+}
+
+.side-card ol,
+.side-card ul {
+    margin: 0;
+    padding-left: 1.1rem;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 640px) {
+    .hero { padding: 1.5rem; }
+    .hero h1 { font-size: 1.5rem; }
+    .steps { grid-template-columns: 1fr; }
+    .card { padding: 1rem 1.1rem; }
+    .card.diagnosis { flex-direction: column; align-items: flex-start; }
+}

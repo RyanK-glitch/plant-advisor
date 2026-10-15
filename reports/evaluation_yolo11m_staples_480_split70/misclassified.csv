@@ -1,0 +1,52 @@
+image,true,predicted
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/maize_gray_leaf_spot/image (267).JPG,maize_gray_leaf_spot,maize_northern_leaf_blight
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/maize_gray_leaf_spot/image (312).JPG,maize_gray_leaf_spot,maize_northern_leaf_blight
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/maize_northern_leaf_blight/f25476a1-6701-4519-a20e-075643e5359e___RS_NLB 0815.JPG,maize_northern_leaf_blight,maize_gray_leaf_spot
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/maize_northern_leaf_blight/image (37).jpg,maize_northern_leaf_blight,maize_gray_leaf_spot
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/maize_northern_leaf_blight/image (895).JPG,maize_northern_leaf_blight,maize_gray_leaf_spot
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/potato_late_blight/new_potato_late_blight_train_00225.jpg,potato_late_blight,potato_healthy
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/potato_late_blight/new_potato_late_blight_val_00175.jpg,potato_late_blight,potato_early_blight
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_brown_spot/IMG_20190419_100805.jpg,rice_brown_spot,rice_leaf_blast
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_brown_spot/IMG_20190419_113238.jpg,rice_brown_spot,rice_leaf_blast
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_brown_spot/IMG_20190419_161513.jpg,rice_brown_spot,rice_leaf_blast
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_brown_spot/IMG_20190421_200151.jpg,rice_brown_spot,rice_healthy
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_brown_spot/IMG_20190424_132316.jpg,rice_brown_spot,rice_healthy
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_brown_spot/IMG_2998.jpg,rice_brown_spot,rice_leaf_blast
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_brown_spot/IMG_3066.jpg,rice_brown_spot,rice_healthy
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_brown_spot/IMG_3072.jpg,rice_brown_spot,rice_healthy
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_brown_spot/IMG_4864.jpg,rice_brown_spot,rice_leaf_blast
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_brown_spot/IMG_4866.jpg,rice_brown_spot,rice_leaf_blast
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_brown_spot/IMG_4906.jpg,rice_brown_spot,rice_leaf_blast
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_brown_spot/new_rice_brown_spot_train_00001.jpg,rice_brown_spot,rice_healthy
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_brown_spot/new_rice_brown_spot_train_00129.jpg,rice_brown_spot,rice_leaf_blast
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_healthy/IMG_20190419_100522.jpg,rice_healthy,rice_leaf_blast
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_healthy/IMG_20190419_100703.jpg,rice_healthy,rice_leaf_blast
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_healthy/IMG_20190419_111932.jpg,rice_healthy,rice_leaf_blast
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_healthy/IMG_20190419_112003.jpg,rice_healthy,rice_leaf_blast
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_healthy/IMG_20190419_124633.jpg,rice_healthy,rice_leaf_blast
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_healthy/IMG_20190419_170344.jpg,rice_healthy,rice_leaf_blast
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_healthy/IMG_20190420_194316.jpg,rice_healthy,rice_brown_spot
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_healthy/IMG_20190424_131316.jpg,rice_healthy,rice_brown_spot
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_healthy/new_rice_healthy_train_00167.jpg,rice_healthy,rice_brown_spot
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_healthy/new_rice_healthy_train_00204.jpg,rice_healthy,rice_leaf_blast
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_healthy/new_rice_healthy_train_00593.jpg,rice_healthy,rice_leaf_blast
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_healthy/new_rice_healthy_train_00793.jpg,rice_healthy,rice_brown_spot
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_healthy/new_rice_healthy_val_00054.jpg,rice_healthy,rice_brown_spot
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_healthy/new_rice_healthy_val_00056.jpg,rice_healthy,rice_leaf_blast
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_leaf_blast/IMG_20190419_111313.jpg,rice_leaf_blast,rice_healthy
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_leaf_blast/IMG_20190419_112300.jpg,rice_leaf_blast,rice_healthy
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_leaf_blast/IMG_20190419_114455.jpg,rice_leaf_blast,rice_healthy
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_leaf_blast/IMG_20190419_114644.jpg,rice_leaf_blast,rice_healthy
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_leaf_blast/IMG_20190419_135050.jpg,rice_leaf_blast,rice_brown_spot
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_leaf_blast/IMG_20190419_161449.jpg,rice_leaf_blast,rice_healthy
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_leaf_blast/IMG_20190419_161534.jpg,rice_leaf_blast,rice_healthy
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_leaf_blast/IMG_20190420_193127.jpg,rice_leaf_blast,rice_brown_spot
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_leaf_blast/IMG_3089.jpg,rice_leaf_blast,rice_brown_spot
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_leaf_blast/IMG_5493.jpg,rice_leaf_blast,rice_brown_spot
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_leaf_blast/new_rice_leaf_blast_train_00155.jpg,rice_leaf_blast,rice_healthy
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_leaf_blast/new_rice_leaf_blast_train_00229.jpg,rice_leaf_blast,rice_brown_spot
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_leaf_blast/new_rice_leaf_blast_val_00027.jpg,rice_leaf_blast,rice_healthy
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_leaf_blast/new_rice_leaf_blast_val_00049.jpg,rice_leaf_blast,rice_healthy
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_leaf_blast/new_rice_leaf_blast_val_00098.jpg,rice_leaf_blast,rice_healthy
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/rice_leaf_blast/rb_wb_123.jpg,rice_leaf_blast,rice_brown_spot
+/Users/ryan/Desktop/Plant-disease_advisor_india copy/data/processed/test/wheat_yellow_rust/Yellow_rust1157.jpg,wheat_yellow_rust,wheat_brown_rust
