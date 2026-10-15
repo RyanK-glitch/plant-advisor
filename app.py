@@ -96,8 +96,16 @@ def load_heavy_models():
         )
 
     print(f"✅ Loading trained YOLOv11m model: {model_path}")
-    # The guard registers a hook on the model, so it is built once alongside it
     return InputGuard(YOLO(str(model_path))), RegulatoryRAG(), model_path
+
+
+def get_api_key():
+    # st.secrets raises when no secrets.toml exists, so fall back to the environment
+    try:
+        key = st.secrets.get("GEMINI_API_KEY")
+    except Exception:
+        key = None
+    return key or os.environ.get("GEMINI_API_KEY")
 
 
 @st.cache_data(ttl=24 * 3600, show_spinner=False)
@@ -140,7 +148,9 @@ place = None
 place_query = st.text_input(
     "Village, town or district", placeholder="e.g. Ludhiana", label_visibility="collapsed"
 ).strip()
-if place_query:
+if len(place_query) == 1:
+    st.caption("Type at least two letters of the place name.")
+elif place_query:
     try:
         places = find_places(place_query)
     except Exception:
@@ -149,9 +159,10 @@ if place_query:
     if places == []:
         st.caption("No matching place was found in India. Try the district name.")
     elif places:
-        place = places[[p["label"] for p in places].index(st.selectbox(
-            "Matching places", [p["label"] for p in places], label_visibility="collapsed"
-        ))]
+        place = places[st.selectbox(
+            "Matching places", range(len(places)), format_func=lambda i: places[i]["label"],
+            label_visibility="collapsed"
+        )]
 
 ui.section_title("📷 Upload a leaf image")
 uploaded_file = st.file_uploader(
@@ -172,16 +183,10 @@ else:
 
     if run_analysis:
         with st.spinner("Analyzing the image and retrieving verified evidence..."):
-            # Classify the image, rejecting unknown photos and crop mismatches
+            # Classify the image, blocking advice when it does not match the selected crop
             check = guard.analyse(image, crop=selected_crop)
             ui.section_title("🩺 Diagnosis")
 
-            if not guard.ood_ready:
-                st.warning("The unknown-photo check is not set up. Run "
-                           "`python scripts/build_ood_index.py` to enable it.")
-            if check["status"] == guard.UNKNOWN:
-                ui.unknown_photo_card()
-                st.stop()
             if check["status"] == guard.CROP_MISMATCH:
                 ui.crop_mismatch_card(
                     selected_crop, check["likely_crop"], check["crop_mass"][selected_crop]
@@ -241,7 +246,7 @@ else:
                 st.stop()
 
             try:
-                api_key = st.secrets.get("GEMINI_API_KEY") or os.environ.get("GEMINI_API_KEY")
+                api_key = get_api_key()
                 if not api_key:
                     st.error("⚠️ GEMINI_API_KEY was not found.")
                     st.stop()

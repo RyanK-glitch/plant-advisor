@@ -151,22 +151,6 @@ def rule_card(rule, approved, warning):
     """)
 
 
-def unknown_photo_card():
-    _render("""
-    <div class="card status-rejected">
-        <div class="rule-head">
-            <p class="rule-chemical">This photo does not look like a supported leaf</p>
-            <span class="badge rejected">✕ NOT RECOGNISED</span>
-        </div>
-        <p class="card-sub">The image is too different from the maize, potato, rice and wheat leaves
-        the model was trained on, so no diagnosis or treatment is given. It may be another crop,
-        a pest or nutrient problem, or an unclear photo.</p>
-        <p class="rule-note">Retake the photo following the tips above, or show the plant to your
-        local agricultural extension officer.</p>
-    </div>
-    """)
-
-
 def crop_mismatch_card(selected_crop, likely_crop, crop_mass):
     _render(f"""
     <div class="card status-warning">
@@ -249,7 +233,7 @@ def sidebar():
         <div class="side-card">
             <h4>How it works</h4>
             <ol>
-                <li>YOLO11m classifies the leaf image and rejects photos it does not recognise.</li>
+                <li>YOLO11m classifies the leaf image.</li>
                 <li>RAG retrieves verified PPQS / CIBRC evidence.</li>
                 <li>A deterministic rule engine approves or blocks chemical advice.</li>
                 <li>Gemini explains the evidence in plain language.</li>

@@ -74,7 +74,6 @@ This project tests a **"Safe-RAG"** approach. The language model is never truste
 - 🛡️ **Regulatory safety card** showing status, chemical, dose, timing, PHI, re-entry period and a link to the official source.
 - 📚 **Transparent evidence**: the retrieved RAG passages can be expanded and inspected.
 - 🌐 **Multilingual reports** in English, Hindi, Tamil, Telugu, Kannada, Malayalam, Marathi, Bengali, Gujarati, Punjabi and Odia. Chemical names, doses, numbers and URLs are kept exactly as verified, so they still match the product label.
-- 🚫 **Unknown-photo rejection**: photos that do not resemble the training leaves (other crops, non-leaf images) are rejected before any diagnosis or treatment is shown.
 - 🌾 **Crop selector**: the farmer can state the crop, which limits the diagnosis to that crop's diseases and blocks advice when the photo looks like a different crop.
 - 🌦️ **Weather-based disease risk** *(prototype)*: an optional location gives a 4-day Low / Moderate / High risk outlook and the next suitable spray window, from the free Open-Meteo forecast.
 - 🔁 **Automatic model fallback**: if a Gemini model is busy, rate-limited or retired, the app immediately tries the next free-tier model and shows which one produced the report.
@@ -131,7 +130,7 @@ Training curves, the confusion matrix and sample predictions are in `runs/classi
 ├── src/                       # Application modules
 │   ├── rag_pipeline.py        # Knowledge-base ingestion and retrieval (ChromaDB)
 │   ├── rule_engine.py         # Deterministic PPQS / CIBRC safety rules
-│   ├── input_guard.py         # Unknown-photo rejection and crop selector
+│   ├── input_guard.py         # Crop selector check
 │   ├── weather_risk.py        # Open-Meteo forecast, disease risk and spray window
 │   ├── labels.py              # Shared label parsing
 │   └── ui_components.py       # HTML components (hero, cards, sidebar, footer)
@@ -144,7 +143,6 @@ Training curves, the confusion matrix and sample predictions are in `runs/classi
 ├── chroma_db/                 # Persisted vector store (built from knowledge_base/)
 │
 ├── models/yolo11m-cls.pt      # Pretrained base model used for fine-tuning
-├── models/ood_index.npz       # Unknown-photo check index (scripts/build_ood_index.py)
 ├── runs/classify/crop_model_runs/
 │   ├── yolo11m_staples_480_split70/
 │   │   ├── weights/best.pt    # Trained model loaded by the app
@@ -214,20 +212,10 @@ On first launch, the BGE embedding model (`BAAI/bge-large-en-v1.5`) is downloade
 Run this whenever files in `knowledge_base/` change:
 
 ```bash
-python rag_pipeline.py
+python src/rag_pipeline.py
 ```
 
 It deletes the old `chroma_db/`, loads every PDF, CSV and XLSX file, splits them into chunks of 900 characters (120 overlap) and stores them in a fresh vector database. Each spreadsheet row is stored as its own record with its `crop_key`, `disease_key`, `regulatory_status` and `source_url`, so exact matches can be retrieved by disease.
-
-### Unknown-photo check
-
-The check compares each photo's classifier features with those of the training images (k-nearest-neighbour similarity) and rejects photos that are too different. Build its index once after training, and again whenever the model is retrained:
-
-```bash
-python scripts/build_ood_index.py
-```
-
-This writes `models/ood_index.npz` and `reports/tables/ood_evaluation.csv`. The threshold is set so that 95% of genuine validation images are accepted. Leaves of PlantVillage crops the model never saw (apple, grape, tomato and others) are used to choose the scoring method and to measure the rejection rate, on two separate groups of crops. Without the index the app still runs, shows a warning and skips the check.
 
 ### Weather risk
 
@@ -282,7 +270,7 @@ Key decisions that keep the advice safe:
 
 - **No held-out test set.** Reported accuracy is on the validation split; real-world accuracy on farmers' phone photos is likely to be lower, especially for images with cluttered backgrounds, multiple leaves or poor lighting.
 - **Dataset bias.** Many images come from PlantVillage, which was photographed under controlled conditions.
-- **Limited scope.** Only 4 crops and 14 classes are supported. The unknown-photo check rejects many out-of-scope photos, but not all of them (see `reports/tables/ood_evaluation.csv`), and it was tested on PlantVillage leaves rather than farmers' photos.
+- **Limited scope.** Only 4 crops and 14 classes are supported. Any other crop or disease will be forced into one of these classes.
 - **Weather risk is not a validated forecast.** The thresholds come from general infection criteria and have not been tested against Indian outbreak records.
 - **Rules can go out of date.** Pesticide registrations change; the rule table must be re-audited periodically.
 - **Depends on an external API.** Report generation needs internet access and the Gemini free tier, which has rate limits and changing model availability.

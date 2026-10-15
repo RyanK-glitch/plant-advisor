@@ -51,19 +51,21 @@ MAX_RAIN_PROBABILITY = 40
 def geocode(name):
     # Indian places matching the typed name, best match first
     response = requests.get(GEOCODE_URL, params={
-        "name": name, "count": 5, "country_code": "IN", "language": "en"
+        "name": name, "count": 10, "countryCode": "IN", "language": "en"
     }, timeout=10)
     response.raise_for_status()
 
     places = []
     for item in response.json().get("results", []):
+        if item.get("country_code") != "IN":
+            continue
         parts = [item.get("name"), item.get("admin2"), item.get("admin1")]
         places.append({
             "label": ", ".join(dict.fromkeys(part for part in parts if part)),
             "latitude": item["latitude"],
             "longitude": item["longitude"],
         })
-    return places
+    return places[:5]
 
 
 def fetch_forecast(latitude, longitude):
