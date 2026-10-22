@@ -4,8 +4,8 @@ Reports accuracy, per-class precision/recall/F1, macro and weighted averages,
 a confusion matrix and the list of misclassified images.
 
 Usage (from the project folder, with the venv active):
-    python evaluation/evaluate_model.py
-    python evaluation/evaluate_model.py --weights runs/classify/crop_model_runs/yolo11m_staples_480_split70/weights/best.pt
+    python scripts/evaluation/evaluate_model.py
+    python scripts/evaluation/evaluate_model.py --weights runs/classify/crop_model_runs/yolo11m_staples_480_split70/weights/best.pt
 """
 import argparse
 import re
@@ -19,7 +19,7 @@ import pandas as pd
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from ultralytics import YOLO
 
-PROJECT_DIR = Path(__file__).resolve().parent.parent
+PROJECT_DIR = Path(__file__).resolve().parents[2]
 DEFAULT_WEIGHTS = PROJECT_DIR / "runs/classify/crop_model_runs/yolo11m_staples_480_split70/weights/best.pt"
 DEFAULT_TEST_DIR = PROJECT_DIR / "data/processed/test"
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".bmp", ".webp", ".tif", ".tiff"}

@@ -6,6 +6,8 @@ from PIL import Image
 from ultralytics import YOLO
 from google import genai
 from google.genai import errors, types
+from src import feedback
+from src import read_aloud
 from src.input_guard import InputGuard
 from src.labels import SUPPORTED_CROPS
 from src.rule_engine import AgriculturalRuleEngine
@@ -118,6 +120,98 @@ def get_forecast(latitude, longitude):
     return weather_risk.fetch_forecast(latitude, longitude)
 
 
+@st.cache_data(max_entries=32, show_spinner=False)
+def report_audio(text, language):
+    return read_aloud.synthesize(read_aloud.speakable_text(text), language)
+
+
+# Fragments rerun on their own, so pressing these buttons keeps the report on screen
+@st.fragment
+def read_aloud_section(report_text, language, key):
+    if not read_aloud.has_voice(language):
+        st.caption(f"🔇 Read-aloud is not available in {language} yet.")
+        return
+    audio_key = f"audio_{key}"
+    if audio_key not in st.session_state:
+        if not st.button("🔊 Read the report aloud", key=f"listen_{key}"):
+            return
+        try:
+            with st.spinner(f"Preparing the {language} audio. This takes a few seconds..."):
+                st.session_state[audio_key] = report_audio(report_text, language)
+        except Exception as error:
+            print(f"Read-aloud failed: {type(error).__name__}: {error}")
+            st.warning("The audio could not be prepared. Check the internet connection and press "
+                       f"the button again. ({type(error).__name__})")
+            return
+
+    # Kept in session state so the player stays after other buttons are pressed
+    st.caption("🔊 Press ▶ to listen if it does not start by itself.")
+    st.audio(st.session_state[audio_key], format="audio/mpeg", autoplay=True)
+
+
+class ReportSkipped(Exception):
+    """The advisory report cannot be written, but the rest of the page still runs."""
+
+
+FEEDBACK_ANSWERS = {
+    "✅ Yes, correct": feedback.CORRECT,
+    "❌ No, wrong": feedback.WRONG,
+    "🤔 Not sure": feedback.UNSURE,
+}
+UNKNOWN_DISEASE = "other"
+
+
+@st.fragment
+def feedback_section(prediction, image, image_id, selected_crop, place_label, language, model_name):
+    ui.section_title("🙋 Was this diagnosis correct?")
+    saved_key = f"feedback_saved_{image_id}"
+    if st.session_state.get(saved_key):
+        st.success("Thank you. Your answer was saved and will help improve the model.")
+        return
+
+    answer = st.radio(
+        "Your answer", list(FEEDBACK_ANSWERS), index=None, horizontal=True,
+        key=f"answer_{image_id}", label_visibility="collapsed"
+    )
+    verdict = FEEDBACK_ANSWERS.get(answer)
+
+    correct_key = None
+    if verdict == feedback.WRONG:
+        # Same-crop diseases first, since a wrong crop is less likely than a wrong disease
+        crop = prediction["crop"]
+        options = sorted(
+            {key for _, key in guard.class_keys} - {prediction["disease_key"]},
+            key=lambda key: (not key.startswith(f"{crop}_"), key)
+        ) + [UNKNOWN_DISEASE]
+        correct_key = st.selectbox(
+            "What is it actually?", options, key=f"correct_{image_id}",
+            format_func=lambda key: "Another problem / I don't know" if key == UNKNOWN_DISEASE
+            else ui.pretty_label(key)
+        )
+
+    comment = st.text_input(
+        "Anything else? (optional)", max_chars=feedback.MAX_COMMENT_LENGTH,
+        key=f"comment_{image_id}", placeholder="e.g. confirmed by the extension officer"
+    )
+    share_photo = st.checkbox(
+        "Share this photo to help improve the model. Location data inside the photo is removed.",
+        key=f"share_{image_id}"
+    )
+
+    if st.button("Send answer", key=f"send_{image_id}", disabled=verdict is None):
+        try:
+            feedback.save_feedback(
+                verdict=verdict, prediction=prediction, image=image, share_photo=share_photo,
+                correct_key=correct_key, comment=comment, selected_crop=selected_crop,
+                place=place_label, report_language=language, model_name=model_name,
+            )
+        except Exception:
+            st.error("Your answer could not be saved. Please try again.")
+            return
+        st.session_state[saved_key] = True
+        st.rerun(scope="fragment")
+
+
 try:
     guard, rag, loaded_model_path = load_heavy_models()
 except FileNotFoundError as error:
@@ -195,6 +289,7 @@ else:
 
             predicted_class = check["label"]
             confidence = check["confidence"]
+            image_id = feedback.image_digest(image)[:16]
             crop, disease_key = check["crop"], check["disease_key"]
             ui.diagnosis_card(crop, disease_key, predicted_class, confidence)
 
@@ -240,16 +335,13 @@ else:
                     st.info("The weather forecast is unavailable right now, "
                             "so the advisory below does not use it.")
 
-            # Generate only when evidence was retrieved
-            if not context:
-                st.warning("A grounded report cannot be generated without matching RAG evidence.")
-                st.stop()
-
             try:
+                # Generate only when evidence was retrieved
+                if not context:
+                    raise ReportSkipped("A grounded report cannot be generated without matching RAG evidence.")
                 api_key = get_api_key()
                 if not api_key:
-                    st.error("⚠️ GEMINI_API_KEY was not found.")
-                    st.stop()
+                    raise ReportSkipped("⚠️ GEMINI_API_KEY was not found.")
 
                 # RAG provides the facts; Gemini explains them as practical farmer guidance
                 prompt = f"""
@@ -303,12 +395,22 @@ next to them.
                 with st.container(key="advisory_report"):
                     st.markdown(report_text)
 
+                read_aloud_section(report_text, report_language, key=image_id)
                 st.caption(f"Report generated by `{used_model}`")
                 if failures:
                     with st.expander("Models skipped because they were unavailable"):
                         st.write("\n".join(f"- {failure}" for failure in failures))
 
+            except ReportSkipped as reason:
+                st.warning(str(reason))
             except Exception as error:
                 st.error(f"⚠️ Error connecting to Gemini API: {error}")
+
+        # Asked even when the report failed, because the diagnosis is what is being judged
+        feedback_section(
+            {key: check[key] for key in ("label", "crop", "disease_key", "confidence")},
+            image, image_id, selected_crop, place["label"] if place else None,
+            report_language, loaded_model_path.parent.parent.name
+        )
 
 ui.footer()

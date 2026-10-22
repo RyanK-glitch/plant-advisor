@@ -1,0 +1,21 @@
+.git/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.vscode/
+.idea/
+.devcontainer/
+
+# Secrets: pass GEMINI_API_KEY at runtime instead
+.streamlit/secrets.toml
+.env
+
+# Large or unused at runtime (best.pt is copied explicitly)
+data/
+_backup_*/
+reports/
+scripts/
+knowledge_base/
+runs/**/last.pt

@@ -1,0 +1,16 @@
+services:
+  app:
+    build: .
+    image: plant-disease-advisor
+    ports:
+      # Change the host side with HOST_PORT=8502 if 8501 is taken
+      - "${HOST_PORT:-8501}:8501"
+    env_file:
+      - .env
+    volumes:
+      # Farmer feedback (SQLite) survives container rebuilds
+      - feedback:/app/data/feedback
+    restart: unless-stopped
+
+volumes:
+  feedback:

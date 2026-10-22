@@ -125,13 +125,15 @@ Training curves, the confusion matrix and sample predictions are in `runs/classi
 ├── app.py                     # Streamlit entry point: diagnosis → RAG → rules → Gemini report
 ├── requirements.txt
 ├── README.md
-├── .gitignore
+├── .env.example               # Template for environment variables
 │
 ├── src/                       # Application modules
 │   ├── rag_pipeline.py        # Knowledge-base ingestion and retrieval (ChromaDB)
 │   ├── rule_engine.py         # Deterministic PPQS / CIBRC safety rules
 │   ├── input_guard.py         # Crop selector check
 │   ├── weather_risk.py        # Open-Meteo forecast, disease risk and spray window
+│   ├── feedback.py            # Stores "Was this correct?" answers (SQLite) for retraining
+│   ├── read_aloud.py          # Reads the report aloud with gTTS
 │   ├── labels.py              # Shared label parsing
 │   └── ui_components.py       # HTML components (hero, cards, sidebar, footer)
 ├── assets/style.css           # Custom styling for the Streamlit interface
@@ -149,16 +151,21 @@ Training curves, the confusion matrix and sample predictions are in `runs/classi
 │   │   └── results.csv, *.png # Training metrics, confusion matrix, batch samples
 │   └── yolo11m_staples_480_split70_test/   # Test-set validation outputs
 │
-├── scripts/
-│   ├── train.py               # Fine-tune YOLO11m on data/processed
-│   ├── data_prep/             # Organise, filter, clean, split and prune the dataset
-│   └── analysis/              # Count classes and audit the dataset
-├── evaluation/                # Test-set evaluation, training-history and dataset charts
+├── scripts/                   # Offline pipeline, run from the project folder
+│   ├── data_prep/             # 1. Organise, filter, clean, split and prune the dataset
+│   ├── analysis/              # 2. Count classes, audit the dataset, export feedback
+│   ├── training/train.py      # 3. Fine-tune YOLO11m on data/processed
+│   └── evaluation/            # 4. Test-set evaluation, training-history and dataset charts
 ├── reports/                   # Generated figures, tables and evaluation results
 │
-└── data/
+├── Dockerfile                 # Container image for the app
+├── docker-compose.yml         # Local container run
+├── .dockerignore
+│
+└── data/                      # Not in git
     ├── raw/                   # Source datasets (PlantVillage, Jain 2026)
-    └── processed/{train,val,test}/  # Final 14-class dataset (70/15/15 split)
+    ├── processed/{train,val,test}/  # Final 14-class dataset (70/15/15 split)
+    └── feedback/              # Farmer feedback database and consented photos
 ```
 
 ## Installation
@@ -226,6 +233,20 @@ Type a village, town or district under **Location** and pick the match. The app 
 
 The weather only affects risk and timing advice. It never changes the chemical, dose or rule status. The thresholds are indicative and should be checked against ICAR guidance.
 
+### Read-aloud reports
+
+Press **🔊 Read the report aloud** under the advisory to hear it in the selected report language (`src/read_aloud.py`). Audio comes from Google Text-to-Speech (gTTS), which needs an internet connection and covers every report language except Odia. Markdown and web addresses are removed before the text is spoken.
+
+### Field feedback ("Was this correct?")
+
+After each diagnosis the farmer can answer **Yes**, **No** (and pick the real disease) or **Not sure**, add a comment and choose to share the photo. Answers are stored in `data/feedback/feedback.db` (SQLite, gitignored; set `FEEDBACK_DIR` to store them elsewhere). Shared photos are resized to 1024 px and saved without EXIF metadata, so phone GPS coordinates are never kept. On Streamlit Community Cloud the disk is reset on restart, so copy the database out regularly.
+
+```bash
+# Field accuracy per class -> reports/tables/feedback_summary.csv
+# Shared photos with a known class -> data/feedback_dataset/<class>/ (review before training)
+python scripts/analysis/export_feedback.py
+```
+
 ### Changing the Gemini models
 
 The fallback order is defined by `GEMINI_MODELS` near the top of `app.py`. The app moves to the next model on errors 404, 408, 429, 500, 502, 503 and 504, or on a 60-second timeout. It stops immediately on other errors (such as an invalid API key), since those would affect every model.
@@ -246,11 +267,11 @@ python scripts/analysis/count_classes.py
 python scripts/analysis/audit_dataset.py
 
 # Train (automatically uses Apple MPS, NVIDIA CUDA or CPU)
-python scripts/train.py
+python scripts/training/train.py
 
 # Plot results into reports/figures/
-python evaluation/plot_training_history.py
-python evaluation/visualize_dataset.py
+python scripts/evaluation/plot_training_history.py
+python scripts/evaluation/visualize_dataset.py
 ```
 
 The evaluation and data-cleaning scripts also use `matplotlib`, `seaborn`, `scikit-learn` and `cleanvision`; install them with `pip install matplotlib seaborn scikit-learn cleanvision` if needed.

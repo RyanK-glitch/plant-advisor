@@ -1,0 +1,2 @@
+predicted_class,correct,wrong,unsure,field_accuracy
+potato_early_blight,2,0,0,1.000
