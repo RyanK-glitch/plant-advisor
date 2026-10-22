@@ -553,6 +553,62 @@ html, body, [data-testid="stAppViewContainer"] {
     padding-left: 1.1rem;
 }
 
+.about-dev {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0.25rem 0 0.85rem;
+}
+
+[data-testid="stSidebar"] .about-avatar {
+    flex: none;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7fd18f 0%, var(--leaf-600) 100%);
+    color: var(--leaf-900);
+    font-weight: 800;
+    font-size: 0.95rem;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
+}
+
+[data-testid="stSidebar"] .about-eyebrow {
+    margin: 0;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9fd3aa;
+    font-weight: 600;
+}
+
+[data-testid="stSidebar"] .about-name {
+    margin: 0;
+    color: #fff;
+    font-size: 1.12rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+[data-testid="stSidebar"] .about-meta {
+    margin: 0;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+[data-testid="stSidebar"] .about-badge {
+    display: inline-block;
+    margin-top: 0.6rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(127, 209, 143, 0.14);
+    border: 1px solid rgba(127, 209, 143, 0.35);
+    color: #c7ebcf;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
 /* ---------- Footer ---------- */
 .footer {
     text-align: center;

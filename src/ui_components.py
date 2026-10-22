@@ -226,9 +226,15 @@ def sidebar():
         _render("""
         <div class="side-card">
             <h4>About</h4>
-            <strong>Developed by Ryan K</strong><br>
-            Final-year Computer Science dissertation<br>
-            <em>ICAR / CIBRC compliance standards</em>
+            <div class="about-dev">
+                <div class="about-avatar">RK</div>
+                <div>
+                    <p class="about-eyebrow">Developed by</p>
+                    <p class="about-name">Ryan Kekulthotuwage</p>
+                </div>
+            </div>
+            <p class="about-meta">Final-year Computer Science dissertation</p>
+            <span class="about-badge">ICAR / CIBRC compliance standards</span>
         </div>
         <div class="side-card">
             <h4>How it works</h4>
