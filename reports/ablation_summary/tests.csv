@@ -1,0 +1,11 @@
+run,metric,comparison,only_first,only_second,p_exact_mcnemar,p_holm,cards
+main,any_violation,A vs B,34,0,1.1641532182693481e-10,3.4924596548080444e-10,70
+main,any_violation,A vs C,34,0,1.1641532182693481e-10,3.4924596548080444e-10,70
+main,any_violation,B vs C,0,0,1.0,1.0,70
+main,mentions_rule_dose,A vs B,0,34,1.1641532182693481e-10,3.4924596548080444e-10,70
+main,mentions_rule_dose,A vs C,0,34,1.1641532182693481e-10,3.4924596548080444e-10,70
+main,mentions_rule_dose,B vs C,0,0,1.0,1.0,70
+none,any_violation,B vs C,0,0,1.0,1.0,70
+none,mentions_rule_dose,B vs C,0,44,1.1368683772161603e-13,1.1368683772161603e-13,70
+wrong,any_violation,B vs C,44,0,1.1368683772161603e-13,1.1368683772161603e-13,70
+wrong,mentions_rule_dose,B vs C,0,20,1.9073486328125e-06,1.9073486328125e-06,70

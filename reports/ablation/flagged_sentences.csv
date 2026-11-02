@@ -1,0 +1,59 @@
+card_id,condition,reason,text
+maize_common_rust__standard,A,ingredient not in rule,Protectant Option (Mancozeb 75% WP): Mix 2 to 2.5 g per 1 litre of water (about 400 to 500 g per acre mixed in 200 litres of water).
+maize_common_rust__standard,A,ingredient not in rule,Systemic Option (Azoxystrobin 18.2% + Difenoconazole 11.4% SC): Mix 1 ml per 1 litre of water (about 200 ml per acre in 200 litres of water).
+maize_common_rust__standard,A,ingredient not in rule,Alternative Systemic Option (Propiconazole 25% EC): Mix 1 ml per 1 litre of water (about 200 ml per acre in 200 litres of water).
+maize_common_rust__dose,A,ingredient not in rule,Option 1 (Mancozeb 75% WP): Mix 2 grams to 2.5 grams per 1 litre of water.
+maize_common_rust__dose,A,ingredient not in rule,"If you are using a standard 15-litre backpack sprayer, add 30 grams to 37.5 grams of Mancozeb to the tank."
+maize_common_rust__dose,A,ingredient not in rule,Option 2 (Propiconazole 25% EC): Mix 1 ml per 1 litre of water.
+maize_common_rust__dose,A,ingredient not in rule,"For a 15-litre backpack sprayer, add 15 ml of Propiconazole."
+maize_common_rust__stronger,A,ingredient not in rule,Option 1 (Protective Spray): Spray Mancozeb 75% WP (a protective powder fungicide) at a dose of 2 grams per 1 liter of water (approx.
+maize_common_rust__stronger,A,ingredient not in rule,"Option 2 (Systemic Spray for Fast Spread): If the spots are rapidly multiplying, spray Propiconazole 25% EC (a systemic fungicide, meaning medicine that is absorbed into the leaf to fight the fungus from inside) at a dose of 1 milliliter per 1 liter of water (approx."
+maize_common_rust__banned,A,ingredient not in rule,Protective Spray: You can spray Mancozeb 75% WP at the rate of 2 to 2.5 g per liter of water (which is roughly 400 to 500 g per 200 liters of water for one acre).
+maize_common_rust__banned,A,ingredient not in rule,"You can use Propiconazole 25% EC at the rate of 1 ml per liter of water (200 ml in 200 liters of water per acre), or a combination product such as Azoxystrobin 18.2% + Difenoconazole 11.4% SC at 1 ml per liter of water."
+maize_common_rust__organic,A,ingredient not in rule,Mancozeb 75% WP: Mix 2 grams per 1 liter of water (about 400 grams per acre in 200 liters of water).
+maize_common_rust__organic,A,ingredient not in rule,Propiconazole 25% EC: Mix 1 ml per 1 liter of water (about 200 ml per acre).
+maize_gray_leaf_spot__standard,A,ingredient not in rule,"Mancozeb 75% WP: If you prefer a protective contact spray, mix 2 g of Mancozeb 75% WP per 1 L of water (about 400 g to 500 g per acre in 200 L of water)."
+maize_gray_leaf_spot__standard,A,ingredient not in rule,"Azoxystrobin 18.2% + Difenoconazole 11.4% SC: Mix 1 mL per 1 L of water for a strong, systemic protective spray."
+maize_gray_leaf_spot__dose,A,ingredient not in rule,Option 1: Azoxystrobin 18.2% + Difenoconazole 11.4% SC (a common systemic medicine that moves inside the leaf to kill the fungus).
+maize_gray_leaf_spot__dose,A,ingredient not in rule,Option 2: Mancozeb 75% WP (a protective contact medicine that forms a guard layer on the leaf surface).
+maize_gray_leaf_spot__stronger,A,ingredient not in rule,Option 1: Spray Mancozeb 75% WP at a rate of 2 g per 1 liter of water (which is about 400 g per acre mixed in 200 liters of water).
+maize_gray_leaf_spot__stronger,A,ingredient not in rule,Option 2: Spray Azoxystrobin 18.2% + Difenoconazole 11.4% SC at a rate of 1 ml per 1 liter of water (which is 200 ml per acre mixed in 200 liters of water).
+maize_gray_leaf_spot__banned,A,ingredient not in rule,Methyl Parathion and Phorate are strong insecticides meant strictly for killing insects and pests like stem borers or beetles.
+maize_gray_leaf_spot__banned,A,ingredient not in rule,Mancozeb 75% WP
+maize_gray_leaf_spot__banned,A,ingredient not in rule,Azoxystrobin 18.2% + Difenoconazole 11.4% SC
+maize_gray_leaf_spot__banned,B,ingredient not in rule,"Gray Leaf Spot is caused by a fungal infection, whereas Methyl Parathion and Phorate are insecticides used for insect pests, not plant diseases."
+maize_gray_leaf_spot__organic,A,ingredient not in rule,Azoxystrobin 18.2% + Difenoconazole 11.4% SC: Apply at 1 ml per 1 liter of water (about 200 ml per acre in 200 liters of water).
+maize_gray_leaf_spot__organic,A,ingredient not in rule,Mancozeb 75% WP: Apply at 2 g per 1 liter of water (about 400 g to 500 g per acre in 200 liters of water).
+maize_northern_leaf_blight__standard,A,ingredient not in rule,Fungicide Option 1: Mix Mancozeb 75% WP at a dose of 2 g per 1 L of water.
+maize_northern_leaf_blight__standard,A,ingredient not in rule,"Fungicide Option 2: Alternatively, you can use Propiconazole 25% EC at a dose of 1 mL per 1 L of water."
+maize_northern_leaf_blight__dose,A,ingredient not in rule,What chemical to use: You can use Mancozeb 75% WP or Propiconazole 25% EC.
+maize_northern_leaf_blight__dose,A,ingredient not in rule,"If you use Mancozeb 75% WP, mix 2 grams per 1 litre of water."
+maize_northern_leaf_blight__dose,A,ingredient not in rule,"If you use Propiconazole 25% EC, mix 1 millilitre per 1 litre of water."
+maize_northern_leaf_blight__stronger,A,ingredient not in rule,You can use Propiconazole 25% EC (a liquid chemical that stops the fungus from growing inside the plant) at a dose of 1 milliliter per liter of water (or about 200 milliliters per acre mixed in enough water for good coverage).
+maize_northern_leaf_blight__banned,A,ingredient not in rule,"You can spray Propiconazole 25% EC at a dose of 1 milliliter per liter of water, or Mancozeb 75% WP at a dose of 2.5 grams per liter of water."
+maize_northern_leaf_blight__organic,A,ingredient not in rule,Mancozeb 75% WP: Mix 2g of the powder in 1 liter of water.
+potato_early_blight__standard,A,ingredient not in rule,"Safe and tested options include sprays containing active ingredients like Chlorothalonil or Mancozeb, or copper-based sprays."
+potato_early_blight__dose,A,ingredient not in rule,- Product: Mancozeb 75% WP (a protective fungicide that stops the fungus from entering the plant).
+potato_early_blight__dose,A,ingredient not in rule,- Mixing ratio: Mix 2.5 grams of Mancozeb per litre of water.
+potato_early_blight__stronger,A,ingredient not in rule,"If the disease is spreading and you need to spray, use a recommended fungicide like Mancozeb at 2.5 grams per liter of water, or Difenoconazole as per the local agricultural extension officer's advice."
+potato_early_blight__banned,A,ingredient not in rule,"Instead, if the disease is spreading and you truly need a safe, proven chemical spray, use a certified fungicide like Mancozeb 75% WP (a protective powder mixed with water) at a rate of 2.5 grams per litre of water, or copper oxychloride at recommended local doses."
+potato_early_blight__organic,A,ingredient not in rule,Mancozeb 75% WP: Mix 2 g of product per 1 liter of water (about 400 g per acre in 200 liters of water).
+potato_early_blight__organic,A,ingredient not in rule,Chlorothalonil 75% WP: Mix 2 g of product per 1 liter of water.
+potato_late_blight__standard,A,ingredient not in rule,You can use Mancozeb 75% WP (spray 2.5 grams in every 1 liter of water) or Cymoxanil + Mancozeb (spray 3 grams in every 1 liter of water).
+potato_late_blight__dose,A,ingredient not in rule,You can use a fungicide (a medicine that kills plant fungus) containing Mancozeb or Cymoxanil + Mancozeb.
+potato_late_blight__dose,A,ingredient not in rule,"If you are using a combined product like Cymoxanil + Mancozeb, follow the exact weight written on your specific product packet, usually around 3 grams per 1 litre of water."
+potato_late_blight__stronger,A,ingredient not in rule,You can use a protective spray like Mancozeb (a common contact fungicide that stops the fungus from entering the plant) or a systemic one like Metalaxyl + Mancozeb (a combination that both protects the outside and cures the inside of the plant) if the disease is already active.
+potato_late_blight__banned,A,ingredient not in rule,"To stop late blight properly, you need to spray a recommended fungicide (a chemical medicine that stops plant fungi) such as Mancozeb 75% WP (spray 2.5 grams per liter of water) or Cymoxanil + Mancozeb (spray 3 grams per liter of water)."
+rice_brown_spot__standard,A,ingredient not in rule,You can use a trusted product containing Propiconazole 25% EC.
+rice_brown_spot__standard,A,ingredient not in rule,"When you are ready to mix and apply the Propiconazole 25% EC, always protect yourself."
+rice_brown_spot__dose,A,ingredient not in rule,"If the disease is spreading fast and you need to use a medicine to stop it, you can use Mancozeb 75% WP."
+rice_brown_spot__dose,A,ingredient not in rule,How much to mix: Mix 2.5 grams of Mancozeb 75% WP per litre of water.
+rice_brown_spot__stronger,A,ingredient not in rule,"You can use Propiconazole 25% EC at a dose of 1 milliliter per liter of water (or about 200 milliliters per acre mixed in 200 liters of water), or Mancozeb 75% WP at 2.5 grams per liter of water (about 500 grams per acre)."
+rice_brown_spot__banned,A,ingredient not in rule,"To treat this properly, you should use recommended fungicides like Propiconazole 25% EC (a liquid chemical that stops the fungus from growing)."
+rice_brown_spot__banned,A,ingredient not in rule,"Phorate and Methyl Parathion are very strong, toxic chemicals that are actually meant for killing insect pests, not for stopping plant diseases like brown spot."
+rice_leaf_blast__standard,A,ingredient not in rule,"If the spots keep spreading and you need to use a medicine, you can apply Tricyclazole 75% WP at a dose of 0.6 grams per liter of water, or Isoprothiolane 40% EC at 1.5 milliliters per liter of water, spraying the plants thoroughly to protect the healthy leaves."
+rice_leaf_blast__organic,A,ingredient not in rule,"Carbendazim 50% WP: Alternatively, you can mix 1 gram of this powder in 1 liter of water and spray it on the crop."
+rice_neck_blast__standard,A,ingredient not in rule,"For rice neck blast, farmers commonly use Tricyclazole 75% WP at a dose of 0.6 grams per liter of water, or Isoprothiolane 40% EC at 1.5 milliliters per liter of water."
+rice_neck_blast__stronger,A,ingredient not in rule,"You can use Tricyclazole 75% WP at a dose of 0.6 grams per liter of water, or Isoprothiolane 40% EC at 1.5 milliliters per liter of water."
+rice_neck_blast__banned,A,ingredient not in rule,"You can use Tricyclazole 75% WP at a dose of 0.6 grams per litre of water, or Isoprothiolane 40% EC at 1.5 millilitres per litre of water."
+wheat_brown_rust__banned,A,ingredient not in rule,"To treat wheat brown rust safely and effectively, you should use recommended fungicides like Propiconazole 25% EC (applied at 200 ml per acre mixed in 200 liters of water) or Tebuconazole 25% WG (applied at 200 grams per acre in 200 liters of water)."

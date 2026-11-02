@@ -1,0 +1,28 @@
+active_ingredient,status,order_or_source,verify_note
+Methyl parathion,banned,S.O. 3951(E) 8 Aug 2018,Check current PPQS banned/restricted list before submission
+Benomyl,banned,S.O. 3951(E) 8 Aug 2018,Check current PPQS list
+Carbaryl,banned,S.O. 3951(E) 8 Aug 2018,Check current PPQS list
+Diazinon,banned,S.O. 3951(E) 8 Aug 2018,Check current PPQS list
+Fenarimol,banned,S.O. 3951(E) 8 Aug 2018,Check current PPQS list
+Fenthion,banned,S.O. 3951(E) 8 Aug 2018,Check current PPQS list
+Linuron,banned,S.O. 3951(E) 8 Aug 2018,Check current PPQS list
+Methoxy ethyl mercury chloride,banned,S.O. 3951(E) 8 Aug 2018,Check current PPQS list
+Thiometon,banned,S.O. 3951(E) 8 Aug 2018,Check current PPQS list
+Tridemorph,banned,S.O. 3951(E) 8 Aug 2018,Check current PPQS list
+Trifluralin,banned,S.O. 3951(E) 8 Aug 2018,Check current PPQS list
+Alachlor,banned,S.O. 3951(E) 2018 (from 31 Dec 2020),Check current PPQS list
+Dichlorvos,banned,S.O. 3951(E) 2018 (from 31 Dec 2020),Check current PPQS list
+Phorate,banned,S.O. 3951(E) 2018 (from 31 Dec 2020),Check current PPQS list
+Phosphamidon,banned,S.O. 3951(E) 2018 (from 31 Dec 2020),Check current PPQS list
+Triazophos,banned,S.O. 3951(E) 2018 (from 31 Dec 2020),Check current PPQS list
+Trichlorfon,banned,S.O. 3951(E) 2018 (from 31 Dec 2020),Check current PPQS list
+Endosulfan,banned,Supreme Court order 2011,Check current PPQS list
+Dicofol,banned,S.O. 4294(E) 2023 (secondary source),Confirm order number on PPQS site
+Dinocap,banned,S.O. 4294(E) 2023 (secondary source),Confirm order number on PPQS site
+Methomyl,banned,S.O. 4294(E) 2023 (secondary source),Confirm order number on PPQS site
+Aldrin,banned,PPQS banned list,Check current PPQS list
+Chlordane,banned,PPQS banned list,Check current PPQS list
+Heptachlor,banned,PPQS banned list,Check current PPQS list
+Lindane,banned,PPQS banned list,Check current PPQS list
+DDT,restricted,PPQS restricted list (public health use only),Check current PPQS list
+Monocrotophos,restricted,Banned on vegetables (PPQS),Not banned outright; flag for manual review

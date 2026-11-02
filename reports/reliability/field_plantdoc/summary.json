@@ -1,0 +1,59 @@
+{
+  "field_set": "field_plantdoc",
+  "images_after_dedup": 596,
+  "classes": [
+    "maize_common_rust",
+    "maize_gray_leaf_spot",
+    "maize_northern_leaf_blight",
+    "potato_early_blight",
+    "potato_late_blight"
+  ],
+  "temperature": 1.568935,
+  "auto-detect": {
+    "accuracy": 0.09395973154362416,
+    "accuracy_ci95": [
+      0.07046979865771812,
+      0.1174496644295302
+    ],
+    "macro_f1": 0.1639160625649802,
+    "macro_f1_ci95": [
+      0.1256584075348541,
+      0.20243103668558549
+    ]
+  },
+  "crop selected": {
+    "accuracy": 0.34563758389261745,
+    "accuracy_ci95": [
+      0.31208053691275167,
+      0.3808724832214765
+    ],
+    "macro_f1": 0.42068258632444727,
+    "macro_f1_ci95": [
+      0.3802719758146585,
+      0.4596384544049393
+    ]
+  },
+  "ece_raw": 0.7360417674663658,
+  "ece_temperature_scaled": 0.6425744966970119,
+  "mean_confidence": 0.7365342282406362,
+  "in_domain_test_same_classes": {
+    "accuracy": 0.9880952380952381,
+    "accuracy_ci95": [
+      0.9778911564625851,
+      0.9948979591836735
+    ],
+    "macro_f1": 0.9808243903754278,
+    "macro_f1_ci95": [
+      0.9629177617133097,
+      0.9944954774636916
+    ]
+  },
+  "drop_accuracy_points": 89.4135506551614,
+  "gate": {
+    "rejected_unknown": 0.9614093959731543,
+    "abstained_low_confidence": 0.0016778523489932886,
+    "answered": 0.03691275167785235,
+    "accuracy_when_answered": 0.13636363636363635,
+    "wrong_answers_given": 0.031879194630872486
+  }
+}

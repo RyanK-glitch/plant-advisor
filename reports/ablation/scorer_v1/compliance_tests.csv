@@ -1,0 +1,5 @@
+test,statistic,df,p_value,cards,p_holm,violations_only_in_A,violations_only_in_B,violations_only_in_C
+"Cochran's Q (A,B,C)",55.166666666666664,2.0,1.0488431371163926e-12,70,,,,
+McNemar exact A vs B,,,4.0745362639427185e-09,70,1.2223608791828156e-08,33.0,1.0,
+McNemar exact B vs C,,,1.0,70,1.0,,2.0,3.0
+McNemar exact A vs C,,,7.916241884231567e-09,70,1.5832483768463135e-08,32.0,,1.0

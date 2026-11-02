@@ -1,0 +1,13 @@
+{
+  "model": "runs/classify/crop_model_runs/yolo11m_staples_480_split70/weights/best.pt",
+  "created": "2026-10-22",
+  "temperature": 1.568935,
+  "target_risk": 0.01,
+  "abstain_threshold": 0.861969,
+  "abstain_threshold_crop_selected": 0.865207,
+  "calibration_fitted_on": "data/processed/val",
+  "knn_k": 10,
+  "knn_threshold": -0.476398,
+  "knn_id_keep_on_val": 0.95,
+  "knn_bank_images": 1680
+}

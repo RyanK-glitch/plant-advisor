@@ -1,0 +1,2 @@
+test,statistic,df,p_value,p_holm,violations_only_in_B,violations_only_in_C,cards
+McNemar exact B vs C,,,0.125,0.125,4,0,70

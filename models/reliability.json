@@ -1,0 +1,13 @@
+{
+  "model": "runs/classify/crop_model_runs/yolo11m_field_ft/weights/best.pt",
+  "created": "2026-10-24",
+  "temperature": 1.359166,
+  "target_risk": 0.01,
+  "abstain_threshold": 0.930091,
+  "abstain_threshold_crop_selected": 0.932616,
+  "calibration_fitted_on": "val_lab,val_field",
+  "knn_k": 10,
+  "knn_threshold": -0.514865,
+  "knn_id_keep_on_val": 0.95,
+  "knn_bank_images": 3241
+}

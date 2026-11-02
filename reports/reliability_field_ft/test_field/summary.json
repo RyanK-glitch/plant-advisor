@@ -1,0 +1,66 @@
+{
+  "field_set": "test_field",
+  "images_after_dedup": 847,
+  "classes": [
+    "maize_common_rust",
+    "maize_gray_leaf_spot",
+    "maize_northern_leaf_blight",
+    "potato_early_blight",
+    "potato_healthy",
+    "potato_late_blight",
+    "rice_brown_spot",
+    "rice_healthy",
+    "rice_leaf_blast",
+    "wheat_brown_rust",
+    "wheat_healthy",
+    "wheat_yellow_rust"
+  ],
+  "temperature": 1.359166,
+  "auto-detect": {
+    "accuracy": 0.9244391971664699,
+    "accuracy_ci95": [
+      0.9079102715466352,
+      0.9421487603305785
+    ],
+    "macro_f1": 0.8309005737492136,
+    "macro_f1_ci95": [
+      0.7729074665187097,
+      0.8836117951545551
+    ]
+  },
+  "crop selected": {
+    "accuracy": 0.9256198347107438,
+    "accuracy_ci95": [
+      0.9090909090909091,
+      0.9433293978748524
+    ],
+    "macro_f1": 0.8381617823262116,
+    "macro_f1_ci95": [
+      0.7826462156351088,
+      0.8890778963955468
+    ]
+  },
+  "ece_raw": 0.02529040052585004,
+  "ece_temperature_scaled": 0.016796690112478467,
+  "mean_confidence": 0.9184787832417123,
+  "in_domain_test_same_classes": {
+    "accuracy": 0.9401544401544402,
+    "accuracy_ci95": [
+      0.9292149292149292,
+      0.9510939510939511
+    ],
+    "macro_f1": 0.9335547717359861,
+    "macro_f1_ci95": [
+      0.9202595486972566,
+      0.9465388960757138
+    ]
+  },
+  "drop_accuracy_points": 1.5715242987970224,
+  "gate": {
+    "rejected_unknown": 0.03423848878394333,
+    "abstained_low_confidence": 0.29634002361275086,
+    "answered": 0.6694214876033058,
+    "accuracy_when_answered": 0.9929453262786596,
+    "wrong_answers_given": 0.004722550177095631
+  }
+}

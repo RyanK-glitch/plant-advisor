@@ -1,0 +1,599 @@
+path,min_hamming_to_train_val_test,duplicate
+ext/field_plantdoc/Corn Gray leaf spot/test_IMG_42231.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/test_rsz0803Figure6.jpg,14,False
+"ext/field_plantdoc/Corn Gray leaf spot/test_show_picture.asp?id=aaaaaaaaaaogcqq&w2=420&h2=378&clip=center,420,378&meta=0.jpg",16,False
+ext/field_plantdoc/Corn Gray leaf spot/test_strom5.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_0796.16graylspot.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_1192.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_1193.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_1355.51grayleafspot.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_18largegls0732_copy-143B1EC97E96BA58322.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_2013Corn_GrayLeafSpot_0815_0003.JPG.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_2013Corn_GrayLeaf_0820_0003.JPG.jpg,14,False
+ext/field_plantdoc/Corn Gray leaf spot/train_2015070295153021.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_2015Corn_Hail_Taylor_PH%2B%25282%2529.JPG.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_22-broders-CR-Gray-leaf-spot-corn.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_2f73110f80014a25a53f9551c94bf164.png.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_7176752.jpeg?351.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_CGrayLeafSpot.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_Close-up-of-GLS.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_Corn-Gray-leafspot-lesions-300x225.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_Corn-gray-leaf-spot-8-15-F1-660.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_FJ_010_F17220_B00010.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_FJ_018_F16271-3.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_Fig%202b.%20GLS%20backlit%20copy.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_Figure%201%20Gray%20leaf%20spot%20and%20Northern%20corn%20leaf%20blight.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_Figure%201.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_Figure%204%20Grey%20leaf%20spot.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_GLS-pic-1-1-225x300.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_GRAY_LE2.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_GetFile.aspx?guid=fb78e057-33b3-4901-b836-e08e45889f6f.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_Gray%20Leaf%20SpotCORN039.JPG.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_Gray%20leaf%20spot-Adam%20Sisson%20%2856%29%20copy-400x267.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_Gray-Leaf-Spot-on-Corn-um9znc.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_Gray-leaf-spot-Adam-Sisson-20.jpg,10,False
+ext/field_plantdoc/Corn Gray leaf spot/train_Gray-leaf-spot.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_GrayLeafSpot_Chilvers.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_Greyleafspot.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_IMG_0004.JPG?itok=tv_vWPMi.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_IMG_1359.JPG.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_IMG_5251.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_IMG_6802%2B%25282%2529.JPG.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_Kelley%20Gray%20leaf%20spot.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_Ontario-Field-Crop-Report_July_27_2017_f3-1024x681.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_corn-gls-bls-lesion-comparison.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_corn-gray-leaf-spot-backlit-2.jpg,14,False
+ext/field_plantdoc/Corn Gray leaf spot/train_corn-gray-leaf-spot-f4.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_corn-gray-leaf-spot.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_cornGLS2.jpg,14,False
+ext/field_plantdoc/Corn Gray leaf spot/train_cp_A-325_gray_leaf_spot_article.jpg,12,False
+ext/field_plantdoc/Corn Gray leaf spot/train_g1902-1.jpg,14,False
+ext/field_plantdoc/Corn Gray leaf spot/train_g1902-3b.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_glfspot.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_gls99-anamosa.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_gray%20leaf%20spot.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_gray-leafspt-09-227x300.jpg,14,False
+ext/field_plantdoc/Corn Gray leaf spot/train_gray_leaf_spot.jpg,14,False
+ext/field_plantdoc/Corn Gray leaf spot/train_gray_leaf_spot__1-14B8612C8B60CDBC8E2.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_gray_leaf_spot_developing.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_grayleafspot99a.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_grayleafspot_earleaf.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_grayleafspothybrid.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_grayleafspotinbred.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_grayspot.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_grey_leaf_spot.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_lipps-d.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_lipps-e.jpg,16,False
+ext/field_plantdoc/Corn Gray leaf spot/train_rsz0715grayleafspot.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_rsz0803Figure5.jpg,18,False
+ext/field_plantdoc/Corn Gray leaf spot/train_uuid%3D23d9bc54-c4a7-4958-890c-0505ac310594%26groupId%3D1841%26t%3D1278717199836.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/test_02c.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/test_0796.20graylssymt.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/test_07c.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/test_0c.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/test_1321189.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/test_160314_web.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/test_2013Corn_GrayLeafSpot_0815_0003.JPG.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/test_2015070295153021.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/test_Common%20Diseases%20Figure%201.JPG.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/test_Corn-SCLB-2017-1.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/test_corn-disease-update-fig-3-gray-leaf-spot.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/test_corn-gray-leaf-spot-f4.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_00c.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_011.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_01c.jpg,14,False
+ext/field_plantdoc/Corn leaf blight/train_02.JPG.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_022.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_03c.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_04c.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_05c.jpg,14,False
+ext/field_plantdoc/Corn leaf blight/train_06c.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_071409%20Vincelli%20nlb%20on%20corn%20leaf.JPG.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_0796.33anthracn.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_0805Fig3400.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_09c.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_1-495x400.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_1200px-Northern_corn_leaf_blight.JPG.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_186116-325x209-Northern-Corn-Leaf-Blight-Chilvers.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_2-3%20Gray%20leaf%20spot%20BRUCE.jpg,14,False
+ext/field_plantdoc/Corn leaf blight/train_2014-07-23-corngosswilt.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_20140826_131630.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_20160812__13ST_xanthomonas~1.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_20160826-corndisease-unlt.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_203725159.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_2159_0.jpeg?itok=eBFRbolm.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_220px-Sporulation_on_leaf.JPG.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_24154194959_fd4b42edde_b.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_28380-1024x768.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_28430_rel.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_28430_web.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_4885423651_3c983eaa16_b.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_80102321.jpg,14,False
+ext/field_plantdoc/Corn leaf blight/train_BacterialLeafStreakinCornImage1.png.jpg,14,False
+ext/field_plantdoc/Corn leaf blight/train_Bsglqj_IYAATS3C.jpg%2Blarge.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_CORN-DISEASE.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_CmyiAkUUIAAqSEa.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_Cochliobolus_heterostrophus.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_Corn+Blight+1970+Fungus%3A+Southern+Corn+Leaf+Blight.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_Corn-Disease-NCLB-A-Nelson-6-18-2015-F1.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_Corn-GLS-Picture2-e1403817927977-1024x416.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_Corn-Gray-Leaf-Spot-7-31-F2.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_Corn-NCLB.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_Corn-disease-small-NCLB-lesions-A-Nelson-6-16-2015-F2.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_Corn-gray-leaf-spot-8-14-15-F1.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_Corn-gray-leaf-spot-8-21.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_Corn-gray-leaf-spot-F2-8-7-15.jpg,14,False
+ext/field_plantdoc/Corn leaf blight/train_Corn-northern%20corn%20leaf%20blight-8-21.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_Corn020Fig2.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_Corn_Fig10.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_DSCN0119.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_DSCN0128.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_Erv-sprayed-4.jpg,14,False
+ext/field_plantdoc/Corn leaf blight/train_FJ_018_F16271-2.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_Fig%201b%20BLS%20backlit%20new%20copy.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_Fig1_Northern_corn_leaf_blight.JPG.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_Figure%202%20Foliar%20symptoms%20of%20similar%20diseases%20to%20Goss.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_Figure%202.JPG.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_Figure-2-.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_Freckles-in-older-lesion1.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_GLSvsNCLB.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_Henrycorn1.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_IMG_1153.JPG.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_IMG_1347.JPG.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_IMG_1385.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_IMG_1468-431x323.JPG.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_IMG_20140601_143916_7931.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_IMG_20140601_143928_0711.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_IMG_42231.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_Kelley%20NCLB.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_N.-Corn-Leaf-Blight-20lx3t9.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_NCLB-2.jpg,14,False
+ext/field_plantdoc/Corn leaf blight/train_NCLB6.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_NoCornLeafBlight13b.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_Northern-Corn-Blight.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_Northern-Corn-Leaf-Blight-Lesions.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_Northern-Corn-Leaf-Blight-NCLB-med.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_Northern-Corn-Leaf-Blight-in-Sweet-Corn.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_Northern-Corn-Leaf-Blight.ashx.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_Northern-Corn-Leaf-Blight.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_Northern-Corn-Leaf-Blight4.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_Northern-corn-leaf-blight-NM-F1a.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_Northern-corn-leaf-blight-NM-F2.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_Northern-corn-leaf-blight-V12-leaf-NM-F3.jpg,14,False
+ext/field_plantdoc/Corn leaf blight/train_Northern-corn-leaf-blight2_twitter.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_Northern-corn-leafblight.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_Northern-leaf-blight-in-corn.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_NorthernCornLeafBlight.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_Ontario-Field-Crop-Report_July_27_2017_f1-1024x768.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_P1000367.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_P6120019.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_Risk+factors+for+Goss%E2%80%99s+wilt+and+leaf+blight+Percent+surface+residue.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_SAM_0376.JPG.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_Slide1.preview.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_Southern-Corn-Leaf-Blight-USDA.ashx?w=770.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_Stewarts-Leaf-Blight-Phase-24.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_agriculture-crop-disease-northern-corn-leaf-blight-fungus-exserohilum-FRA00E.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_agriculture-crop-disease-northern-corn-leaf-blight-fungus-exserohilum-turcicum-closeup-of-lesions-on-corn-leaves-texas-usa-x74mbx.jpg,14,False
+ext/field_plantdoc/Corn leaf blight/train_anthracnoseblight.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_article-fungicides-northern-corn-leaf-blight.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_bacterial-corn-1.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_bacterial-corn-300x300.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_bacterial-leaf-streak-corn.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_bacterial-leaf-streak-of-corn-450-F1.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_bacterial-leaf-streak-of-corn.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_bls-lesions-tjz-hr.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_clip_image010.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_corn-BLS-irregular-lesions.jpg,14,False
+ext/field_plantdoc/Corn leaf blight/train_corn-bacterial-leaf-streak-V4-AdamsCnty-THartman-F1a.jpg,14,False
+ext/field_plantdoc/Corn leaf blight/train_corn-bacterial-leaf-streak-backlit-severe-lesions.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_corn-bacterial-leaf-streak-f1.JPG.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_corn-bacterial-leaf-streak-f4.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_corn-bacterial-leaf-streak-f7a-b.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_corn-bacterial-leaf-streak-narrow-stripes.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_corn-bacterial-leaf-streak-zoomed.jpg,14,False
+ext/field_plantdoc/Corn leaf blight/train_corn-baterial-leaf-stripe-f1b.JPG.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_corn-disease-update-fig-1-northern-leaf-blight.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_corn-disease-update-fig-2-diplodia-leaf-streak1.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_corn-fig-1.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_corn-fig-2.jpg,12,False
+ext/field_plantdoc/Corn leaf blight/train_corn-gray-leaf-spot-f5.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_corn-large-wavy-Xanth-lesions-f3.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_corn-leaf-scald-9a.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_corn-leaf-scald-9c.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_corn-leaf-scald-9d.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_corn-mature-bacterial-leaf-streak.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_corn-northern-corn-leaf-blight-f6.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_corn-northern-corn-leaf-blight.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_corn-several-Holcus%20spot%20lesions-f4.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_corn-short-backlit-Xanth-lesions-halos-f2-.jpg,14,False
+ext/field_plantdoc/Corn leaf blight/train_corn-short-backlit-Xanth-lesions-halos-f2.jpg,14,False
+ext/field_plantdoc/Corn leaf blight/train_corn-stalk-rot-leaf-symptoms-F1.jpg.jpeg,16,False
+ext/field_plantdoc/Corn leaf blight/train_corn1.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_corn_disease_clip_image001_0003.jpg,14,False
+ext/field_plantdoc/Corn leaf blight/train_corn_gray_leaf_spot.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_cp_VA-123_northern_corn_leaf_blight_article.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_disease.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_disease3.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_disease4.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_dsc5270.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_dsc5582.jpg,14,False
+ext/field_plantdoc/Corn leaf blight/train_f7bd710e84db49829a918d85a2ff809c1.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_fi00245.JPG.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_ga-2015-05-20-nclb.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_gls99-anamosa-400x334.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_gosswilt_TMB.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_gray-leaf-spot-lesions-F4.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_gray-leaf-spot-severe--.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_helminthosporium-or-turcicum-leaf-stains-on-corn-leaf-disease-of-corn-plant-R5GR3C.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_image.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_image393.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_image_1500x1500%253E.jpeg?1473988930.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_image_1500x1500%253E.jpeg?1473988931.jpg,14,False
+ext/field_plantdoc/Corn leaf blight/train_img_0099-2.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_img_5593211e4bf88_49361.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_leafblightcorn.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_nclb-2015-n-mcghee.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_nclb3_rob_factsheetimage.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_nclb3x1200.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_nclb4x1200.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_nclb7x1200.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_ncls-2016-a-shirley.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_ncorn_leaf_blight_0796_02.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_northern-corn-leaf-blight-exserohilum-turcicum-lesions-on-a-maize-BBFWRB.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_northern-corn-leaf-blight-exserohilum-turcicum-lesions-on-a-maize-BX3K2K.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_northern-corn-leaf-blight-exserohilum-turcicum-lesions-on-a-maize-leaf-south-africa-XDYJWY.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_northern-corn-leaf-blight-exserohilum-turcicum-lesions-on-a-maize-leaf-south-africa-xe3a7j.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_northern-corn-leaf-blight.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_northern_corn_leaf_blight_university_of_delaware-600x400.jpg,14,False
+ext/field_plantdoc/Corn leaf blight/train_northern_leaf_blight.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_photo-7-004.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_possible-northerncornleafspot.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_rsz0731northernleafblightcigarshapedlesionsfig5.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_show_picture.asp?id=aaaaaaaaaanoroz&w=524.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_smaller-Septoria2.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_stewartswilt.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_stock-photo-northern-corn-leaf-blight-nclb-is-a-foliar-disease-of-corn-maize-caused-by-exserohilum-turcicum-592778840.jpg,18,False
+ext/field_plantdoc/Corn leaf blight/train_stock-photo-northern-corn-leaf-blight-nclb-is-a-foliar-disease-of-corn-maize-caused-by-exserohilum-turcicum-592778861.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_stock-photo-northern-corn-leaf-blight-nclb-is-a-foliar-disease-of-corn-maize-caused-by-exserohilum-turcicum-592778870.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_stock-photo-northern-corn-leaf-blight-nclb-is-a-foliar-disease-of-corn-maize-caused-by-exserohilum-turcicum-592778882.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_swcdg1-e1482969712678-300x188.jpg,14,False
+ext/field_plantdoc/Corn leaf blight/train_swcdg1.jpg,16,False
+ext/field_plantdoc/Corn leaf blight/train_sweetcorn_Northern-corn-leaf-blight_zoom.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/test_0796.39maizerust.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/test_0796.40comrust.jpg,14,False
+ext/field_plantdoc/Corn rust leaf/test_0796.47southrust.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/test_0796.52srusttelia.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/test_12-19striprustJIM.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/test_1355.50commonrust.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/test_2256-body-1501555581-1.jpg,12,False
+ext/field_plantdoc/Corn rust leaf/test_393.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/test_5496239405_d95bdb97d1_z.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/test_80104747.jpg,14,False
+ext/field_plantdoc/Corn rust leaf/train_36687400253_a227c2ca28_b.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_37310253326_7f32b316d1_b.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_37310253806_04fee91918_b.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_37356969601_4208f8bb7f_b.jpg,14,False
+ext/field_plantdoc/Corn rust leaf/train_5833328024_724f1df3f2_b.jpg,14,False
+ext/field_plantdoc/Corn rust leaf/train_COURTESY_southernrust-greyleaf.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_Common-rust-east-central-Indiana.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_Common-rust-of-corn-Tedford.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_Corn%20Common%20Rust.png.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_Corn-Common-Rust-300x225.jpg,14,False
+ext/field_plantdoc/Corn rust leaf/train_Corn-Common-Rust.jpg,14,False
+ext/field_plantdoc/Corn rust leaf/train_Corn-Rusts-wKBishop-story-622x467.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_Corn-Southern-Rust-7-17-F1.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_Corn-southern-rust-C-Schleicher-7-31-F1.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_Corn-southern-rust-F1%20%281%29.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_Corn-southern-rust-advanced-F1b-8-7-15.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_Corn-southern-rust-early-F1a-8-7-15.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_CornRust1.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_CornRustFS1.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_CornRustFS3.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_Faske%20Southern%20rust%20of%20corn.jpg,14,False
+ext/field_plantdoc/Corn rust leaf/train_Fig3_Common_rust.JPG.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_Figure%201%20Common%20rust%20on%20a%20corn.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_Figure%201%20common%20rust%20on%20corn.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_Figure%201%20early%20southern%20rust.JPG.jpg,14,False
+ext/field_plantdoc/Corn rust leaf/train_Figure%201a%20%20early%20symptoms%20S%20rust.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_Figure%202a%20older%20S%20rust%20pustules.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_Figure-12.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_Figure-4-stripe-rust.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_GetStoredImage?symbolicName=originalX19261YsiteXDTNYcatalogXcatalog%20&category=CMS.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_IMG_1360-1.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_IMG_1376-300x300.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_IMG_1762.jpg,14,False
+ext/field_plantdoc/Corn rust leaf/train_IMG_1841.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_IMG_20130620_190316.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_IMG_5011-15vruqb.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_Ontario-Field-Crop-Report_July_27_2017_f2-1024x768.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_Resized_DSC_0191_Rust-Closeup.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_SCR-2015.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_SCR.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_STANDALONE_Southern-corn-rust_01-WEB.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_So-Corn-Rust.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_Southern%20corn%20rust.ashx?w=600.jpg,14,False
+ext/field_plantdoc/Corn rust leaf/train_Southern%20rust.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_Southern-Corn-Rust.ashx?w=770.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_Southern-Corn-Rust1.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_Southern-Rust4-300x200.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_Southern-rust-2_Wise.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_Southern-rust-underside-of-leaf-1.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_Southern-rust-upper-side-of-leaf-with-pustules-1.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_SouthernRustLeaf.png.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_common-rust-in-field-300x200.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_common-rust-lower-leaf-side.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_common-rust-upper-leaf-side.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_common-rust3.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_commonrust-2016-a-shirley.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_commonrust2-1024x768.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_corn%20rust.jpg,14,False
+ext/field_plantdoc/Corn rust leaf/train_corn-common-rust-f5-R.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_corn-diseases-fig-1-so-rust.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_corn-diseases-fig-2-tar-spot.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_corn-leaf-rust.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_corn-rust-2.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_corn-rust-3.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_corn-rust-4.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_corn-rust-5.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_corn-rust-6_19_17-image.jpg,14,False
+ext/field_plantdoc/Corn rust leaf/train_corn-rust-disease-pests-leaf-260nw-1038062233.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_corn-rust.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_corn-southern-rust-2.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_corn-southern-rust-pustules.JPG?itok=VXIzyv8m.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_corn-southern-rust-spores.jpg,14,False
+ext/field_plantdoc/Corn rust leaf/train_corn_rust.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_corn_rust1_l.jpg,14,False
+ext/field_plantdoc/Corn rust leaf/train_disease.JPG.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_disease1.jpg,14,False
+ext/field_plantdoc/Corn rust leaf/train_disease2.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_g14-1680-1.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_g14-1680-6.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_ga-2015-06-01-crust-02.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_imag4090.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_image1.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_imgF.jpg,14,False
+ext/field_plantdoc/Corn rust leaf/train_markjones-corn-001.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_plant-rust-southern-rust-on-corn-leaf-plant-diseases-rust-of-wheat.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_ppth-friskop-1-corn-rust.png.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_pu_polysora.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_rust-3.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_rust.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_rust1_600px-2emtnhc.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_sevc.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_southern-rust-2.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_southern-rust-als.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_southern-rust-close.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_southern-rust-lower-side.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_southern-rust-upper-side-576x1024.jpg,14,False
+ext/field_plantdoc/Corn rust leaf/train_southernrust-seminole-june1.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_southernrust.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_southernrust1.png.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_stock-photo-rust-disease-in-corn-field-119923045.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_swcdg3.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_swcdg4.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_sweetcorn_Rust-2_zoom.jpg,18,False
+ext/field_plantdoc/Corn rust leaf/train_sweetcorn_Rust-3_zoom.jpg,14,False
+ext/field_plantdoc/Corn rust leaf/train_uuid%3Db547b743-d1a1-4788-86dc-8e90ad17e170%26groupId%3D1841%26t%3D1375243802648.jpg,16,False
+ext/field_plantdoc/Corn rust leaf/train_web1_cusoutherncornrust.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/test_3023.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/test_backus-056-potato-blight.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/test_early-blight-alternaria-alternata-leaf-spotting-on-potato-leaf-X91XJE.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/test_early-blight-or-target-spot-alternaria-solani-lesions-on-a-tomato-AXK6AY.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/test_earlyblightpotato.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/test_potato-blight-phytophthora-infestans-close-up-of-upper-surface-of-BMMRXC.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/test_potato-early-blight-alternaria-alternata-lesion-on-a-potato-leaf-a1w1em.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/test_potatobd001.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_00009.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_0042241.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_0061.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_1024_x_576_-_alternaria_early_infection_symptoms_spreading.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_1024px-Phytophthora_infestans_potato_%27Dor%C3%A9%27%2C_aardappelziekte_Dor%C3%A9.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_1200px-Late_blight_on_potato_leaf_2.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_1421_0.jpeg?itok=FMtmgePj.jpg,8,True
+ext/field_plantdoc/Potato leaf early blight/train_14321627273_58d893c3e2_potato-plant.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_1573852-Early-Blight-e1515624612559.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_15hrt15a1f1.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_18028_1.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_20080710-early%2Bblight%2Blesions%2Bwith%2Byellow%2Bhaloes.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_20100816earlyblight.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_21-late%20blight-early%20symptoms%20potato.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_2643371-version%3D1.0%26t%3D1260361493000.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_27013702151_95bd415ba9_o.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_2D1A9552.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/train_2OBH_29_Gardening_early_blight.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_36-early-blight-concentric-rings.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_3785483636_d888419c98_o.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_45035_1.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_500px-Tomato_Early_Blight_Leaf.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_5688742112_147f33b89d_Phytophthora-Infestans.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_5816740026_d42ef24413_Phytophthora-Infestans.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_80109626.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_87A_Pot_Early.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_AF_news_p4_p5_p6_Blight.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_AGS-154646-S-5801.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_B2650214-Potato_leaf_blight-SPL.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_Blght.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/train_Blight-leaf-.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/train_Close-up-view-of-blight-lesion-on-leaf-of-potato-c-Blackthorn-Arable-615x346.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_EB%20lesions1_opt.jpeg.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_Early%20Blight%20-%20Potatoes.ashx?w=350.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_Early-Blight-Leaves-56a348bf3df78cf7727cb35e.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_Early-Blight-UK-A.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_Early_Blight_of_Tomato177.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/train_Early_blight_on_tomato_leaves_7871930010-Fairfax.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_IMG_0014.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_IMG_0020.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_IMG_0022.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/train_IMG_9055.JPG.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_Leaves-with-early-blight-need-to-be-removed-225x300.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_PHYTIN23.img.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/train_Potato-Blight-Infecting-Leaves.jpg,12,False
+ext/field_plantdoc/Potato leaf early blight/train_Potato-Blight-on-Leaves.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_Potato-blight-leaves-B.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_Potato-blight-on-leaf.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_Potato-earlyblight2.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_Potato_Blight_Leaf.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_Potato_Early_Blight_%26_Late_Blight.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/train_a_solani.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_agriculture-potato-early-blight-leaf-symptoms-on-a-potato-leaf-caused-picture-id586884353.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_alternaria%20%2824%29.JPG.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_backus-045-potato-blight.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_blight-2x.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/train_blight-leaf-top.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_blighted-potatoe-leave.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/train_cq5dam.web.16-9.8.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_early%20blight.tom_.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_early-blight-2.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_early-blight-alternaria-alternata-leaf-spotting-on-potato-leaf-ACG5WF.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/train_early-blight-closeup-NCSU.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_early-blight-cmyk-opt.jpeg.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_early-blight-courtesy-Melanson-MS-State-U-Ext-Bugwood.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/train_early-blight-or-target-spot-alternaria-solani-lesions-on-a-tomato-by9j8r.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_early-blight-or-targfet-spot-alternaria-solani-lesions-on-a-tomato-ACG8W6.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_early-blight-potatoes.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_early-blight-septoria-ls-fig-1.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_early_blight1.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/train_earlyblight21.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_eb2.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_f1078eef6945e3430829706f84bf70c0.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_f204d9b6516c961f48502e0b7ae3f746.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_fac66s01a.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_fac66s01h.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_fi000294.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_home-design.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_irish-blight-symptoms-on-potato-leaves-atmf8b.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_maxresdefault.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_pe-mi-lateblightleaf.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_potato-blight-damage-on-leaves-caused-by-fungus-phytophthora-picture-id505322893.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_potato-blight-leaf.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_potato-blight-phytophora-infestans-close-up-of-infected-leaf-showing-A60HXN.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_potato-blight-phytophora-infestans-close-up-of-infected-leaf-showing-a60hxn.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_potato-blight-phytophora-infestans-close-up-of-infected-leaf-top-surface-a60hxg.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_potato-blight-phytophthora-infestans-close-up-of-upper-surface-of-bmmrxd.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/train_potato-blight-phytophthora-infestans-showing-infected-leaf-top-surface-bmmrtd.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_potato-blight-showing-on-potato-plant-leaves-KJ70DB.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_potato-early-blight-alternaria-alternata-discreet-lesions-on-a-potato-BY651F.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_potato-early-blight-alternaria-alternata-lesion-on-a-potato-leaf-X96EFD.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_potato-early-blight-alternaria-alternata-lesions-on-a-potato-leaf-by650f.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_potato-early-blight-alternaria-alternata-lesions-on-potato-leaf-XDF64E.jpg,20,False
+ext/field_plantdoc/Potato leaf early blight/train_potato-early-blight-alternaria-alternata-target-spot-lesion-on-a-potato-leaf-x63fwh.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_potato-early-blight-alternaria-alternata-target-spot-lesions-on-a-by64yw.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_potato-early-blight-lesion-on-a-potato-leaf-picture-id81781211.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_potato_alternaria_03_zoom.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_potato_alternaria_04_zoom.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_potato_early-blight_01_zoom.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_potato_early-blight_02_zoom.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/train_potato_early-blight_03_zoom.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_potato_early-blight_04_zoom.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_potato_early-blight_05_zoom.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/train_potato_early-blight_06_zoom.jpg,16,False
+ext/field_plantdoc/Potato leaf early blight/train_potatoaltkc.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/train_potatoearlyblight.jpg,18,False
+ext/field_plantdoc/Potato leaf early blight/train_potatoearlyblightcloseup_pdc.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/train_potatolb_full_leafx1200.jpg,14,False
+ext/field_plantdoc/Potato leaf early blight/train_potatolb_small_leaf_lesionx1200.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/test_1421_0.jpeg?itok=FMtmgePj.jpg,8,True
+ext/field_plantdoc/Potato leaf late blight/test_20090710-lateblight.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/test_2540_600.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/test_5816740026_d42ef24413_Phytophthora-Infestans.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/test_B2750109-Late_blight_on_a_potato_plant-SPL.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/test_LateBlight04.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/test_irish-blight-symptoms-on-potato-leaves-atmf8b.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/test_potato-late-blight.jpg,12,False
+ext/field_plantdoc/Potato leaf late blight/train_14321627273_58d893c3e2_b.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_22-late%20blight-advanced%20symptoms%20potato.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_24064_1.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_24847793510_7859b46a3d.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_2619_600.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_286_1600.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/train_2976_1600.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_3720946948_339251cc94_z.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_3782849713_398f3a1086_b.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_39-late-blight-mold.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_4-late-blight-cmyk-opt.jpeg.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/train_4442_1600.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_460_1600.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_6-13lateblightleavesMARY.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_6a00d8341c4fe353ef011571354632970c-800wi.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/train_B2650062-Potato_late_blight-SPL.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_B2750121-Potato_late_blight-SPL.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_Blog-3.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/train_CzFxqKtWEAA4U3g.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_IMG_0019.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_IMG_5358.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_IMG_5390.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_IMG_5813-1024x768.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_Jessore-potato-late-blight-8-2h2fdkl.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_LB_potato_leaf_topside.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_Late+Blight+of+Potato+and+Tomato.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_Late+blight+on+potato.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_Late-Blight-336x437.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_Late-Blight-56a34bc55f9b58b7d0d15210.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_Late-blight-infected-potato-plants_2.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_Late-blight-leaves_261x240.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_Late-blight-on-leaf-email.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_Late-blight.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_LateBlight02.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_LateBlight03.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/train_LateBlight13.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/train_LateBlightFig3new.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_Late_blight_on_potato_leaf.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_Late_blight_on_potato_leaf_3-58bcf5055f9b58af5c27bf74.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_Lateblight.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/train_Potato-Late-Blight-3-06202014.jpeg.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_Potato-late-blight-008.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/train_Potato-late-blight-caused-by-Phytophthora-infestans_Q320.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_Potato-late-blight-in-field-trial-1.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_PotatoLateBlight2.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_Symptom_potato_late_blight.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_White-mould-potato-blight.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_b3a52d4eda0deedc34260c4dee847a5b.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/train_backus-056-potato-blight.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/train_blight-on-potato-leaves.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/train_cropped-symptom_potato_late_blight.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/train_d4fc0f56-da2e-4d7e-9a22-2430b562eeee.jpeg.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/train_dsc_8151s.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/train_early_blight.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/train_fi000293.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_fig1a_500.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_figure-7-gudmestad-opt.jpeg.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_foliar_late_blight.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_gcp_A-2_Late_Blight_of_potatoes_callout1.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_late-blight-leaf-figure1.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_late-blight-leaf.jpg,20,False
+ext/field_plantdoc/Potato leaf late blight/train_late-blight-leaves.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_late-blight-lesions-potato-leaf-miller-research-809.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_late-blight-midwest_twitter.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_late-blight-on-potato-leaf-550.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/train_late-blight-potato.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_late.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_late_blight.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_late_blight_potato_leaf_500.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_lateblight1.JPG.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_lateblight2.JPG.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_lateblight8.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_lateblightleaf.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_lateblightlesions_1.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_lb4_l.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_lb7_l.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_phytophthora-infestans-late-blight-or-potato-blight-on-the-haulm-of-E29H6G.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/train_phytophthora-infestans-late-blight-or-potato-blight-on-the-haulm-of-EHW1RD.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_phytophthora-infestans-potato-blight-first-foliar-symptoms-on-solanum-EJKRCK.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_potato-blight-phytophora-infestans-close-up-of-infected-leaf-top-surface-A60HXG.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_potato-late-blight-phytophthora-infestans-lesions-on-potato-foliage-X4XJF4.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_potato-late-blight-phytophthora-infestans-lesions-on-potato-foliage-a1w19k.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_potato-late-blight-phytophthora-infestans-necrotic-disease-lesions-B7DEW3.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_potato-late-blight-phytophthora-infestans-necrotic-disease-lesions-B7G2EC.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_potato-late-blight-symptom-on-leaves-PGB5H9.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/train_potato-late-blight-symptom-on-leaves-PGB5NJ.jpg,12,False
+ext/field_plantdoc/Potato leaf late blight/train_potato-solanum-tuberosum-late-blight.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_potato_late-blight_02_zoom.jpg,12,False
+ext/field_plantdoc/Potato leaf late blight/train_potato_late-blight_05_zoom.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_potato_late-blight_07_zoom.jpg,14,False
+ext/field_plantdoc/Potato leaf late blight/train_potato_late-blight_08_zoom.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_potato_ocw_botrytis-lateblight.jpg,12,False
+ext/field_plantdoc/Potato leaf late blight/train_potato_ocw_lateblight-earlyblight.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_potatolb_branchx500.jpg,18,False
+ext/field_plantdoc/Potato leaf late blight/train_potatolb_symptoms_meg-cornell_300x225.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_potatolb_upper_leafcux1200.jpg,16,False
+ext/field_plantdoc/Potato leaf late blight/train_wur-late-blight-in-potato-809.jpg,18,False
