@@ -5,7 +5,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PIP_NO_CACHE_DIR=1 \
     HF_HOME=/opt/hf-cache \
     YOLO_CONFIG_DIR=/tmp/ultralytics \
-    YOLO_MODEL_PATH=/app/models/best.pt \
+    YOLO_MODEL_PATH=/app/runs/classify/crop_model_runs/yolo11m_field_ft/weights/best.pt \
     FEEDBACK_DIR=/app/data/feedback
 
 # OpenCV (pulled in by ultralytics) needs these shared libraries
@@ -25,12 +25,21 @@ RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTr
 # Use the baked-in copy instead of checking the Hub on every start
 ENV HF_HUB_OFFLINE=1
 
-COPY .streamlit/config.toml .streamlit/config.toml
-COPY assets/ assets/
-COPY src/ src/
+# --chmod=755 throughout: several host files are owner-only and the app runs as a non-root user.
+# (755, not 644: the mode also applies to folders COPY creates, which need +x to be entered.)
+COPY --chmod=755 .streamlit/config.toml .streamlit/config.toml
+COPY --chmod=755 assets/ assets/
+# 3D leaf model and still image, served at /app/static/ (the .blend source is excluded in .dockerignore)
+COPY --chmod=755 static/ static/
+COPY --chmod=755 src/ src/
 COPY chroma_db/ chroma_db/
-COPY runs/classify/crop_model_runs/yolo11m_staples_480_split70/weights/best.pt models/best.pt
-COPY app.py .
+# The field-fine-tuned model the app uses; reliability.json and the feature bank were fitted to it.
+# Kept at its project path: the reliability gate switches off unless the model path matches reliability.json.
+COPY --chmod=755 runs/classify/crop_model_runs/yolo11m_field_ft/weights/best.pt \
+    runs/classify/crop_model_runs/yolo11m_field_ft/weights/best.pt
+# Calibration, abstention and unknown-input settings (scripts/evaluation/*)
+COPY --chmod=755 models/reliability.json models/ood_feature_bank.npy models/
+COPY --chmod=755 app.py .
 
 # Run as a non-root user
 RUN useradd --create-home --uid 1000 appuser \

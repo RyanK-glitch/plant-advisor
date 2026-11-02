@@ -1,7 +1,20 @@
 [theme]
-base = "light"
+font = "sans serif"
+
+# Light and dark are both defined, so Streamlit's Settings menu offers Light / Dark / System.
+# Dark is made the default on a visitor's first visit by assets/motion.js.
+[theme.light]
 primaryColor = "#2e7d32"
 backgroundColor = "#f6f8f5"
 secondaryBackgroundColor = "#e3f1e6"
 textColor = "#1c2421"
-font = "sans serif"
+
+[theme.dark]
+primaryColor = "#4caf50"
+backgroundColor = "#0b1510"
+secondaryBackgroundColor = "#13201a"
+textColor = "#e4efe7"
+
+[server]
+# Serves static/ at /app/static/ (the 3D leaf model and its still image)
+enableStaticServing = true

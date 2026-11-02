@@ -19,3 +19,13 @@ _backup_*/
 .vscode/
 .idea/
 ~$*
+
+# Evaluation caches (re-created by scripts/evaluation/extract_outputs.py)
+reports/reliability/cache/
+
+# Tooling
+node_modules/
+.pytest_cache/
+
+# Evaluation caches for the field model (re-created by scripts/evaluation/evaluate_field_model.sh)
+reports/reliability_field_ft/cache/

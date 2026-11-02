@@ -1,13 +1,12 @@
-import json
 import os
 from pathlib import Path
 import streamlit as st
 from PIL import Image
 from ultralytics import YOLO
-from google import genai
-from google.genai import errors, types
 from src import feedback
 from src import read_aloud
+from src.advisory_prompt import build_report_prompt
+from src.gemini_client import generate_with_fallback
 from src.input_guard import InputGuard
 from src.labels import SUPPORTED_CROPS
 from src.rule_engine import AgriculturalRuleEngine
@@ -23,19 +22,10 @@ st.set_page_config(
 )
 
 ui.load_css()
+ui.load_motion()
+with st.container(key="hud_layer"):
+    ui.hud_background()
 ui.sidebar()
-
-# Free-tier Gemini text models, tried in order until one responds
-GEMINI_MODELS = [
-    
-    "gemini-3.8-flash",
-    "gemini-3.7-flash",
-    "gemini-3.5-flash",
-    "gemini-3.6-flash",
-    "gemini-3.5-flash-lite",
-    "gemini-3.1-flash-lite",
-    "gemini-3-flash-preview",
-]
 
 # Report languages: display label -> name given to Gemini
 REPORT_LANGUAGES = {
@@ -52,33 +42,6 @@ REPORT_LANGUAGES = {
     "ଓଡ଼ିଆ (Odia)": "Odia",
 }
 
-# Busy, rate-limited, retired or timed-out models: move to the next one
-FALLBACK_CODES = {404, 408, 429, 500, 502, 503, 504}
-
-
-def generate_with_fallback(api_key, prompt):
-    # Give each model 60 seconds so a stalled one does not block the fallback
-    client = genai.Client(api_key=api_key, http_options=types.HttpOptions(timeout=60_000))
-    failures = []
-
-    for model_name in GEMINI_MODELS:
-        try:
-            response = client.models.generate_content(model=model_name, contents=prompt)
-            if response.text:
-                return response.text, model_name, failures
-            failures.append(f"{model_name}: empty response")
-        except errors.APIError as error:
-            # Other client errors (bad key, bad request) affect every model, so stop
-            if error.code not in FALLBACK_CODES:
-                raise
-            failures.append(f"{model_name}: {error.code} {error.status}")
-        except Exception as error:
-            # Network timeouts and dropped connections
-            failures.append(f"{model_name}: {type(error).__name__}")
-
-    raise RuntimeError("All Gemini models are currently unavailable. " + "; ".join(failures))
-
-
 @st.cache_resource
 def load_heavy_models():
     # Resolve best.pt from the project folder, not the terminal's current folder
@@ -87,7 +50,7 @@ def load_heavy_models():
     model_path = (
         Path(configured_path).expanduser().resolve()
         if configured_path
-        else app_dir / "runs/classify/crop_model_runs/yolo11m_staples_480_split70/weights/best.pt"
+        else app_dir / "runs/classify/crop_model_runs/yolo11m_field_ft/weights/best.pt"
     )
 
     # Never silently use the untrained base model
@@ -98,7 +61,7 @@ def load_heavy_models():
         )
 
     print(f"✅ Loading trained YOLOv11m model: {model_path}")
-    return InputGuard(YOLO(str(model_path))), RegulatoryRAG(), model_path
+    return InputGuard(YOLO(str(model_path)), model_path=model_path), RegulatoryRAG(), model_path
 
 
 def get_api_key():
@@ -220,44 +183,48 @@ except FileNotFoundError as error:
 
 rule_engine = AgriculturalRuleEngine()
 
+ui.mobile_header()   # phones only: app bar and short intro instead of the hero
 ui.hero(f"YOLO11m ({loaded_model_path.name})")
 ui.steps()
 
-ui.section_title("🌐 Report language")
-language_label = st.selectbox(
-    "Report language", list(REPORT_LANGUAGES), label_visibility="collapsed"
-)
-report_language = REPORT_LANGUAGES[language_label]
+# Settings in one container: on phones the stylesheet shows them after the upload card
+with st.container(key="settings_block"):
+    ui.section_title("🌐 Report language")
+    language_label = st.selectbox(
+        "Report language", list(REPORT_LANGUAGES), label_visibility="collapsed"
+    )
+    report_language = REPORT_LANGUAGES[language_label]
 
-ui.section_title("🌾 Crop")
-crop_options = {"Not sure: detect automatically": None}
-crop_options.update({crop.capitalize(): crop for crop in SUPPORTED_CROPS})
-selected_crop = crop_options[st.selectbox(
-    "Crop", list(crop_options), label_visibility="collapsed",
-    help="Choosing your crop limits the diagnosis to that crop's diseases."
-)]
+    ui.section_title("🌾 Crop")
+    crop_options = {"Not sure: detect automatically": None}
+    crop_options.update({crop.capitalize(): crop for crop in SUPPORTED_CROPS})
+    selected_crop = crop_options[st.selectbox(
+        "Crop", list(crop_options), label_visibility="collapsed",
+        help="Choosing your crop limits the diagnosis to that crop's diseases."
+    )]
 
-ui.section_title("📍 Location for weather risk (optional)")
-place = None
-place_query = st.text_input(
-    "Village, town or district", placeholder="e.g. Ludhiana", label_visibility="collapsed"
-).strip()
-if len(place_query) == 1:
-    st.caption("Type at least two letters of the place name.")
-elif place_query:
-    try:
-        places = find_places(place_query)
-    except Exception:
-        places = None
-        st.caption("Location search is unavailable right now. The advisory works without it.")
-    if places == []:
-        st.caption("No matching place was found in India. Try the district name.")
-    elif places:
-        place = places[st.selectbox(
-            "Matching places", range(len(places)), format_func=lambda i: places[i]["label"],
-            label_visibility="collapsed"
-        )]
+    ui.section_title("📍 Location for weather risk (optional)")
+    place = None
+    place_query = st.text_input(
+        "Village, town or district", placeholder="e.g. Ludhiana", label_visibility="collapsed"
+    ).strip()
+    if len(place_query) == 1:
+        st.caption("Type at least two letters of the place name.")
+    elif place_query:
+        try:
+            places = find_places(place_query)
+        except Exception:
+            places = None
+            st.caption("Location search is unavailable right now. The advisory works without it.")
+        if places == []:
+            st.caption("No matching place was found in India. Try the district name.")
+        elif places:
+            place = places[st.selectbox(
+                "Matching places", range(len(places)), format_func=lambda i: places[i]["label"],
+                label_visibility="collapsed"
+            )]
 
+ui.mobile_scan_header()   # phones only: the "Scan a leaf" card around the uploader
 ui.section_title("📷 Upload a leaf image")
 uploaded_file = st.file_uploader(
     "Choose a leaf image", type=["jpg", "jpeg", "png"], label_visibility="collapsed"
@@ -273,17 +240,32 @@ else:
     with action_col:
         ui.photo_tips()
         st.write("")
-        run_analysis = st.button("🔍 Run Safe-RAG Analysis", type="primary")
+        run_analysis = st.button("🔍 Run Safe-RAG Analysis", type="primary", key="run_analysis")
 
     if run_analysis:
         with st.spinner("Analyzing the image and retrieving verified evidence..."):
             # Classify the image, blocking advice when it does not match the selected crop
-            check = guard.analyse(image, crop=selected_crop)
+            with ui.analysis_scan("Scanning the leaf",
+                                  "YOLO11m is classifying the disease and checking the photo.",
+                                  step=0, language=report_language):
+                check = guard.analyse(image, crop=selected_crop)
             ui.section_title("🩺 Diagnosis")
+
+            if check["status"] == guard.UNKNOWN_INPUT:
+                ui.unknown_input_card()
+                st.stop()
 
             if check["status"] == guard.CROP_MISMATCH:
                 ui.crop_mismatch_card(
                     selected_crop, check["likely_crop"], check["crop_mass"][selected_crop]
+                )
+                st.stop()
+
+            if check["status"] == guard.LOW_CONFIDENCE:
+                # Calibrated confidence below the abstention threshold: no treatment advice
+                ui.low_confidence_card(
+                    check["crop"], check["disease_key"], check["confidence"],
+                    check["threshold"], check["alternatives"]
                 )
                 st.stop()
 
@@ -344,51 +326,14 @@ else:
                     raise ReportSkipped("⚠️ GEMINI_API_KEY was not found.")
 
                 # RAG provides the facts; Gemini explains them as practical farmer guidance
-                prompt = f"""
-You are a patient agricultural instructor speaking directly to a farmer.
-Explain clearly what the farmer should do about {predicted_class}
-({confidence:.2%} image-model confidence). Be helpful, calm and respectful. Make sure to sounds like a real person, not a robot. Use the following RAG evidence and safety rule to ground your advice.
-
-PRIMARY RAG EVIDENCE:
-{context}
-
-SAFETY RULE:
-{json.dumps(rule, indent=2)}
-
-WEATHER OUTLOOK (indicative forecast, not a validated disease forecast):
-{weather_summary or "Not provided."}
-
-Important instructions:
-1. Ground every disease, symptom and management claim in the RAG evidence or safety rule.
-   Chemical names, doses, timing, maximum applications, PHI and re-entry periods must come
-   ONLY from the SAFETY RULE. Never recommend a chemical or dose that is not in the safety rule.
-2. Focus on actions, not a list of facts. Say what to do now, what to do next and why each
-   action helps. Use complete, natural sentences rather than short technical fragments.
-3. Use simple everyday language. If a technical term is necessary, explain it immediately.
-4. Do not invent missing advice, pesticide details, measurements or regulatory claims.
-   Say when verified information is unavailable and advise contacting a local extension officer.
-5. If the status starts with VERIFIED, explain the exact chemical, dose, timing, maximum
-   applications, PHI, re-entry period and source URL without changing any value. Explain PHI
-   and re-entry in plain language. Never say treatment is unverified when a verified rule exists.
-6. For PARTIAL status, give no automatic dose. For a healthy class, recommend no chemical.
-7. Remind the farmer that an image result is an initial assessment and should be confirmed
-   in the field, especially before applying a chemical.
-8. If a weather outlook is provided, use it only to advise on when to spray and how closely
-   to watch the crop, and say that it is an indicative forecast. It must never change the
-   chemical, dose or any other value from the safety rule.
-
-Use these headings in this practical order:
-Assessment; What You Should Do Now; How to Manage and Prevent Further Spread;
-Verified Treatment; Safety and Field Confirmation; Sources.
-
-LANGUAGE:
-Write the entire report, including the headings, in {report_language}, using simple
-everyday words a farmer would use. Keep chemical and product names, doses, units, numbers,
-days, hours and source URLs exactly as written in the safety rule, in English letters and
-digits, so they match the product label. You may add a descriptive {report_language} explanation
-next to them.
-"""
-                with st.spinner("Generating the advisory report..."):
+                prompt = build_report_prompt(
+                    predicted_class, confidence, context, rule, weather_summary, report_language
+                )
+                with st.spinner("Generating the advisory report..."), ui.analysis_scan(
+                    "Writing your advisory",
+                    f"Gemini is explaining the verified evidence and safety rule in {report_language}.",
+                    step=2, language=report_language
+                ):
                     report_text, used_model, failures = generate_with_fallback(api_key, prompt)
 
                 ui.section_title("🤖 RAG-grounded advisory report")

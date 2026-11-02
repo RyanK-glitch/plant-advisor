@@ -19,3 +19,6 @@ reports/
 scripts/
 knowledge_base/
 runs/**/last.pt
+
+# Blender source files are for editing only; the app serves leaf.glb and leaf.webp
+**/*.blend

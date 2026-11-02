@@ -86,6 +86,8 @@ This project tests a **"Safe-RAG"** approach. The language model is never truste
 - ✅ **Field feedback**: farmers can confirm or correct each diagnosis, building a dataset for retraining.
 - 🔁 **Automatic model fallback**: if a Gemini model is busy, rate-limited or retired, the app immediately tries the next free-tier model and shows which one produced the report.
 - 🎨 **Custom HTML / CSS interface** on top of Streamlit, with a responsive layout for phones.
+- 🌗 **Dark mode by default**, with Light / Dark / System in Streamlit's Settings menu.
+- 🛰️ **Vision-scan interface**: an "AI console" hero with the four crops' leaves and real evaluation numbers, and an animated background showing the pipeline's real values alongside farmer-friendly lines in the report languages. A Blender-made 3D leaf scans while the model and Gemini work. Everything holds still with reduced motion. See [`docs/UI_3D.md`](docs/UI_3D.md).
 
 ## Supported crops and diseases
 
@@ -100,7 +102,20 @@ This project tests a **"Safe-RAG"** approach. The language model is never truste
 
 ## Model and results
 
-### Dataset
+The model was trained in two stages. Stage 1 trained YOLO11m on lab-style images. It reached 97 % on its own test split but only 2 % on real field photos, so stage 2 fine-tuned it on field photos. **The app uses the stage 2 model** (`runs/classify/crop_model_runs/yolo11m_field_ft/weights/best.pt`).
+
+### Summary: lab model vs field model (the app's model)
+
+| Model | Lab test (1,779 images) | Field test (847 images) |
+|---|---|---|
+| Stage 1: lab model | **97.13 %** (96.4–97.8), macro-F1 0.968 | 2.13 % (1.3–3.1), macro-F1 0.104 |
+| **Stage 2: field model (used by the app)** | 94.77 % (93.8–95.7), macro-F1 0.941 | **92.44 %** (90.8–94.2), macro-F1 0.831 |
+
+95 % bootstrap confidence intervals in brackets. Fine-tuning gave up 2.4 points on lab images and gained 90 points on field photos. Full tables: `reports/model_comparison/`.
+
+### Stage 1: lab model
+
+#### Dataset
 
 15,216 source images were pooled, **3,335 exact duplicates were removed** so that no image can appear in two splits, and the remaining 11,881 unique images were given a stratified 70 / 15 / 15 split (seed 42).
 
@@ -112,7 +127,7 @@ This project tests a **"Safe-RAG"** approach. The language model is never truste
 
 Per-class counts are in `reports/tables/split_summary.csv`.
 
-### Training
+#### Training
 
 | Setting        | Value                                             |
 |----------------|---------------------------------------------------|
@@ -128,7 +143,7 @@ Per-class counts are in `reports/tables/split_summary.csv`.
 
 Best validation top-1 accuracy was **97.58 %** (top-5: 100 %) at epoch 40.
 
-### Results on the held-out test set
+#### Results on the held-out lab test set
 
 The test split was not used for training or model selection.
 
@@ -149,6 +164,49 @@ Most errors are between the three rice classes, which are the weakest:
 
 Four classes score a perfect 1.000 F1 (maize common rust, maize healthy, rice neck blast and wheat healthy) and every other class is above 0.94. The full per-class report, confusion matrix and list of misclassified images are in `reports/evaluation_yolo11m_staples_480_split70/`; training curves are in `reports/figures/`.
 
+**It did not work on field photos.** On the 847-photo field test set below it scored 2.13 %, and on 596 PlantDoc maize and potato photos 9.4 %, predicting most of them as wheat classes (68 of 116 corn-rust photos became wheat brown rust). It seems to have learnt "field background → wheat", because the wheat training images were the most field-like. That is why stage 2 was needed.
+
+### Stage 2: field fine-tuning (the app's model)
+
+#### Field dataset
+
+Field photos of the supported classes were collected from five public datasets (see [Acknowledgements](#acknowledgements-and-data-sources)) and cleaned before splitting:
+
+- Perceptual hashing (pHash) of all 6,780 field images and the 11,881 lab images: **no field image was within 6 bits of a lab image**, so there is no leakage from the stage 1 data.
+- 836 near-identical field images removed, and 38 pairs with conflicting labels dropped. Look-alike images were kept together in one split.
+- 70 / 15 / 15 split per source and class: **4,208 train, 889 val, 847 test**. The field test set was never trained on.
+- Lab images topped up each class (100 per class in train, 20 in val; 300 in train for maize healthy and rice neck blast, which have no field photos), so the model keeps its lab accuracy. Field classes with fewer than 300 training photos were oversampled up to 4×.
+
+The field test set covers 12 of the 14 classes (no field photos exist for maize healthy or rice neck blast) and is uneven: rice has 574 of the 847 images, and maize gray leaf spot only 3.
+
+#### Training
+
+Fine-tuned from the stage 1 weights with the same image size and augmentation, but a lower learning rate (AdamW, lr₀ = 0.0002, cosine LR, 1 warm-up epoch) so the weights are adjusted rather than overwritten. Training ran for 20 of 25 epochs before early stopping (patience 7); the best validation top-1 accuracy was **93.84 %** at epoch 15, on a validation set that mixes field and lab images.
+
+#### Results
+
+| Test set | Accuracy (95% CI) | Macro-F1 (95% CI) |
+|---|---|---|
+| Field test (847) | **92.44 %** (90.8–94.2) | 0.831 (0.773–0.884) |
+| Lab test (1,779) | 94.77 % (93.8–95.7) | 0.941 (0.930–0.952) |
+
+- **Field F1 per class:** 0.96–1.00 for potato healthy, potato late blight, rice healthy and all three wheat classes; 0.84–0.90 for maize common rust, rice brown spot and rice leaf blast; weaker on classes with very few field test photos: potato early blight 0.71 (7 photos), maize northern leaf blight 0.53 (10) and maize gray leaf spot 0.25 (3).
+- **On lab images** every class dropped slightly; the rice classes remain the weakest (brown spot 0.80, leaf blast 0.81, healthy 0.89).
+- Per-class tables and confusion matrices: `reports/model_comparison/` and `reports/reliability_field_ft/test_field/`.
+
+#### Reliability checks for this model
+
+The confidence calibration, abstention threshold and unknown-input gate were re-fitted for this model (`models/reliability.json`, `models/ood_feature_bank.npy`):
+
+| Image set | Refused as unknown | Withheld (low confidence) | Answered | Correct when answered |
+|---|---|---|---|---|
+| Lab test (1,779) | 4.8 % | 10.6 % | 84.7 % | 98.6 % |
+| Field test (847) | 3.4 % | 29.6 % | 66.9 % | 99.3 % |
+| Other crops, PlantVillage (930) | 51.7 % | 31.9 % | 16.3 % (all wrong) | – |
+| Unseen rice problems, field (210) | 8.1 % | 75.7 % | 16.2 % (all wrong) | – |
+
+When the app does answer, it is right about 99 % of the time. The cost is that it withholds about a third of field photos and asks for a better photo or an extension officer. Unknown inputs are mostly stopped by the two checks together, but about 1 in 6 still receive a (wrong) diagnosis. Details: [`docs/EVALUATION.md`](docs/EVALUATION.md).
+
 ## Project structure
 
 Folders marked *(local only)* are listed in `.gitignore` and are not in the repository.
@@ -163,6 +221,8 @@ Folders marked *(local only)* are listed in `.gitignore` and are not in the repo
 ├── assets/
 │   └── style.css                  # Custom styling for the interface
 ├── chroma_db/                     # Persisted vector store, built from knowledge_base/
+├── docs/
+│   └── EVALUATION.md              # How to reproduce every evaluation result, and the results
 ├── data/                          # (local only)
 │   ├── raw/                       # Source datasets (PlantVillage, Jain 2026)
 │   ├── processed/                 # Final 14-class dataset
@@ -176,20 +236,28 @@ Folders marked *(local only)* are listed in `.gitignore` and are not in the repo
 │   ├── Crop_Disease_RAG_Advisory_India.xlsx
 │   └── India_PPQS_CIBRC_Verified_Treatment_Table.xlsx
 ├── models/
-│   └── yolo11m-cls.pt             # Pretrained base model used for fine-tuning
+│   ├── yolo11m-cls.pt             # Pretrained base model used for stage 1 training
+│   ├── reliability.json           # Calibration, abstention and unknown-input settings for the app's model
+│   ├── ood_feature_bank.npy       # Training-image features for the unknown-input check
+│   └── *_staples.*                # The same two files for the stage 1 lab model (backup)
 ├── reports/
-│   ├── evaluation_yolo11m_staples_480_split70/
-│   │   ├── classification_report.csv
-│   │   ├── confusion_matrix.csv
-│   │   ├── confusion_matrix.png
-│   │   ├── misclassified.csv
-│   │   └── YOLO11m_Test_Evaluation.xlsx
+│   ├── ablation/                  # A/B/C ablation reports and compliance scores
+│   ├── ablation_stress/           # Retrieval-failure stress test (no / wrong evidence)
+│   ├── ablation_summary/          # Combined ablation table (summary.md)
+│   ├── evaluation_yolo11m_staples_480_split70/   # Stage 1 lab model, lab test set
 │   ├── figures/                   # Dataset distribution and training curves
+│   ├── model_comparison/          # Stage 1 vs stage 2 on lab and field test sets
+│   ├── rag_eval/                  # Retrieval metrics
+│   ├── reliability/               # Stage 1 model: calibration, abstention, unknown input, PlantDoc test
+│   ├── reliability_field_ft/      # App's model: calibration, abstention, unknown input, field test
 │   └── tables/                    # Class counts, split manifest, dataset issues, feedback summary
 ├── runs/classify/crop_model_runs/
+│   ├── yolo11m_field_ft/
+│   │   └── weights/
+│   │       └── best.pt            # Stage 2 field model, loaded by the app
 │   └── yolo11m_staples_480_split70/
 │       └── weights/
-│           └── best.pt            # Trained model loaded by the app
+│           └── best.pt            # Stage 1 lab model (starting point for stage 2)
 ├── scripts/                       # Offline pipeline, run from the project folder
 │   ├── analysis/
 │   │   ├── audit_dataset.py       # Class distribution chart
@@ -206,18 +274,28 @@ Folders marked *(local only)* are listed in `.gitignore` and are not in the repo
 │   ├── evaluation/
 │   │   ├── evaluate_model.py      # Test-set metrics and confusion matrix
 │   │   ├── plot_training_history.py
-│   │   └── visualize_dataset.py
+│   │   ├── visualize_dataset.py
+│   │   ├── evaluate_field_model.sh   # Full re-evaluation of the field model + comparison
+│   │   ├── extract_outputs.py, calibration_abstention.py, ood_detection.py, field_test.py, compare_models.py
+│   │   ├── rag_retrieval_eval.py
+│   │   ├── ablation_abc.py, ablation_retrieval_stress.py, score_compliance.py, ablation_summary.py
+│   │   └── config/                # Class mapping, banned-pesticide list, manual corrections
 │   └── training/
 │       └── train.py               # Fine-tune YOLO11m on data/processed
 ├── src/                           # Application modules
+│   ├── advisory_prompt.py         # Report prompt for Gemini (plus reduced prompts for the ablation)
 │   ├── feedback.py                # Stores "Was this correct?" answers (SQLite)
-│   ├── input_guard.py             # Crop selector check
+│   ├── gemini_client.py           # Gemini call with automatic model fallback
+│   ├── input_guard.py             # Unknown input → crop mismatch → low confidence checks
 │   ├── labels.py                  # Shared label parsing
 │   ├── rag_pipeline.py            # Knowledge-base ingestion and retrieval (ChromaDB)
 │   ├── read_aloud.py              # Reads the report aloud with gTTS
+│   ├── reliability.py             # Temperature calibration, abstention and kNN unknown-input gate
 │   ├── rule_engine.py             # Deterministic PPQS / CIBRC safety rules
 │   ├── ui_components.py           # HTML components (hero, cards, sidebar, footer)
 │   └── weather_risk.py            # Open-Meteo forecast, disease risk and spray window
+├── tests/
+│   └── test_safety_scenarios.py   # 29 safety behaviour tests
 ├── .dockerignore
 ├── .env                           # GEMINI_API_KEY for Docker (local only)
 ├── .env.example                   # Template for .env
@@ -226,7 +304,8 @@ Folders marked *(local only)* are listed in `.gitignore` and are not in the repo
 ├── README.md
 ├── app.py                         # Streamlit entry point: diagnosis → RAG → rules → Gemini report
 ├── docker-compose.yml             # Local container run with a persistent feedback volume
-└── requirements.txt
+├── requirements.txt
+└── requirements-eval.txt          # Extra packages for the evaluation scripts and tests
 ```
 
 ## Installation
@@ -254,7 +333,7 @@ GEMINI_API_KEY = "your-key-here"
 
 Alternatively, set it as an environment variable: `export GEMINI_API_KEY="your-key-here"`. Both `secrets.toml` and `.env` are already in `.gitignore`; never commit a real key.
 
-**5. Check the trained model is present** at `runs/classify/crop_model_runs/yolo11m_staples_480_split70/weights/best.pt`. To use a model stored elsewhere, set:
+**5. Check the trained model is present** at `runs/classify/crop_model_runs/yolo11m_field_ft/weights/best.pt`. The reliability checks only switch on when the model is at this path, because `models/reliability.json` was calibrated for it. To use a model stored elsewhere, set:
 
 ```bash
 export YOLO_MODEL_PATH="/full/path/to/best.pt"
@@ -288,7 +367,7 @@ The image uses CPU-only PyTorch, runs as a non-root user, includes a health chec
 **Option A: pull the published image**
 
 ```bash
-docker run -d -p 8501:8501 -e GEMINI_API_KEY=your-key-here ryankglitch/plant-advisor:v3
+docker run -d -p 8501:8501 -e GEMINI_API_KEY=your-key-here ryankglitch/plant-advisor:v7
 ```
 
 **Option B: build from source with Docker Compose**
@@ -306,7 +385,7 @@ Compose stores farmer feedback in a named volume (`feedback`), so it survives re
 
 ```bash
 docker buildx build --platform linux/amd64,linux/arm64 \
-  -t ryankglitch/plant-advisor:v3 --push .
+  -t ryankglitch/plant-advisor:v7 -t ryankglitch/plant-advisor:latest --push .
 ```
 
 ## Deploying to Azure
@@ -318,7 +397,7 @@ The live app runs on **Azure Container Apps** from the Docker Hub image.
 | Resource group   | `plant-rg` (Southeast Asia)                                 |
 | Environment      | `plant-env`                                                 |
 | Container app    | `plant-advisor`, 2 vCPU / 4 GiB, port 8501, 0–1 replicas    |
-| Image            | `docker.io/ryankglitch/plant-advisor:v3`                    |
+| Image            | `docker.io/ryankglitch/plant-advisor:v7` (field model, dark-mode vision-scan UI, app-style phone layout)|
 | Feedback storage | Azure Files share `feedback` in storage account `plantadvisorfeedback`, mounted at `/app/data/feedback` |
 
 Because feedback is stored on Azure Files, it survives restarts, scale-to-zero and new revisions. Browse it in the portal under **Storage accounts → plantadvisorfeedback → File shares → feedback**; `feedback.db` appears after the first submission.
@@ -339,7 +418,7 @@ With a minimum of 0 replicas the app shuts down when idle, so the first visit af
 | Variable          | Purpose                                            | Default                                    |
 |-------------------|----------------------------------------------------|--------------------------------------------|
 | `GEMINI_API_KEY`  | Google Gemini key for report generation (required) | read from `.streamlit/secrets.toml`        |
-| `YOLO_MODEL_PATH` | Path to the trained classifier                     | `runs/…/yolo11m_staples_480_split70/weights/best.pt` |
+| `YOLO_MODEL_PATH` | Path to the trained classifier                     | `runs/…/yolo11m_field_ft/weights/best.pt`  |
 | `FEEDBACK_DIR`    | Where the feedback database and photos are stored  | `data/feedback`                            |
 
 ### Rebuilding the knowledge base
@@ -377,7 +456,7 @@ python scripts/analysis/export_feedback.py
 
 ### Changing the Gemini models
 
-The fallback order is defined by `GEMINI_MODELS` near the top of `app.py`. The app moves to the next model on errors 404, 408, 429, 500, 502, 503 and 504, or on a 60-second timeout. It stops immediately on other errors (such as an invalid API key), since those would affect every model.
+The fallback order is defined by `GEMINI_MODELS` in `src/gemini_client.py`. The app moves to the next model on errors 404, 408, 429, 500, 502, 503 and 504, or on a 60-second timeout. It stops immediately on other errors (such as an invalid API key), since those would affect every model.
 
 ## Re-training and evaluation
 
@@ -413,6 +492,20 @@ python scripts/evaluation/visualize_dataset.py
 
 The evaluation and data-cleaning scripts also use `matplotlib`, `seaborn`, `scikit-learn` and `cleanvision`; install them with `pip install matplotlib seaborn scikit-learn cleanvision` if needed.
 
+Steps 1–6 produce the stage 1 lab model. Stage 2 (field fine-tuning) was run from a separate working folder, `../plant-field-training/`, which holds the field datasets, the dataset build script and `train_field.py`; it starts from the stage 1 `best.pt` and writes `yolo11m_field_ft/weights/best.pt`. Copy that file to `runs/classify/crop_model_runs/yolo11m_field_ft/weights/` in this project.
+
+### Reliability and system evaluation
+
+Calibration, abstention, unknown-input detection, the field test, RAG retrieval metrics, the A/B/C ablation and the safety test suite are described step by step in [`docs/EVALUATION.md`](docs/EVALUATION.md). For the app's model, one script re-runs everything and the stage 1 vs stage 2 comparison:
+
+```bash
+pip install -r requirements-eval.txt
+bash scripts/evaluation/evaluate_field_model.sh   # writes models/reliability.json, reports/reliability_field_ft/, reports/model_comparison/
+python -m pytest tests -q
+```
+
+The app switches on the reliability checks automatically when `models/reliability.json` exists and was calibrated for the model it loads.
+
 ## Safety design
 
 Key decisions that keep the advice safe:
@@ -420,16 +513,20 @@ Key decisions that keep the advice safe:
 - **The LLM never chooses a chemical or dose.** These come only from `src/rule_engine.py`, whose rules were audited against PPQS / CIBRC sources on 22 September 2026.
 - **Healthy predictions never trigger pesticide advice.**
 - **Partial matches give no automatic dose** and are flagged for manual label checking.
+- **Unknown images are refused.** A photo whose features are far from every training image (another crop, an unseen disease, not a leaf) gets no diagnosis (`UNKNOWN_INPUT`).
+- **Low confidence means no advice.** Confidence is temperature-calibrated; below the abstention threshold the app shows the likely options and asks for a better photo or an extension officer (`LOW_CONFIDENCE`).
 - **No evidence, no report.** If retrieval finds nothing for the detected disease, the report is not generated.
 - **Values are protected in translation.** Chemical names, doses, units, numbers and URLs stay exactly as verified in every language.
 - **The image result is presented as an initial assessment.** Farmers are told to confirm in the field and to follow the registered product label.
 
 ## Limitations
 
-- **Test images are not field photos.** The 97.13 % test accuracy comes from the same sources as the training data. Real-world accuracy on farmers' phone photos is likely to be lower, especially with cluttered backgrounds, multiple leaves or poor lighting. The field feedback feature is designed to measure this.
-- **Rice classes are the weakest** (F1 0.87–0.91), mainly confusion between brown spot, leaf blast and healthy leaves.
-- **Dataset bias.** Many images come from PlantVillage, which was photographed under controlled conditions.
-- **Limited scope.** Only 4 crops and 14 classes are supported. Any other crop or disease will be forced into one of these classes.
+- **The field test is small and uneven for some classes.** The 92.44 % field accuracy is dominated by rice (574 of 847 photos). Maize gray leaf spot has only 3 field test photos and northern leaf blight 10, so their field scores (F1 0.25 and 0.53) are uncertain, and maize healthy and rice neck blast have no field photos at all.
+- **Field photos come from public datasets, not from this app's users.** They were taken in India, Indonesia, Ethiopia and elsewhere, by researchers. Accuracy on Indian farmers' own phone photos has not been measured yet; the field feedback feature is designed to measure this.
+- **About a third of field photos get no diagnosis.** The abstention threshold keeps answered field photos about 99 % correct, but withholds 30 % of them as low confidence.
+- **Unknown inputs are not always caught.** About 1 in 6 photos of other crops or of rice problems the model was not trained on still receive a (wrong) diagnosis.
+- **Rice classes are the weakest on lab images** (F1 0.80–0.89 for brown spot, leaf blast and healthy), mainly confusion between the three.
+- **Limited scope.** Only 4 crops and 14 classes are supported. The unknown-input gate rejects most other crops, but it is tested only on the image sets in `docs/EVALUATION.md` and will not catch every unseen disease of the four supported crops.
 - **Weather risk is not a validated forecast.** The thresholds come from general infection criteria and have not been tested against Indian outbreak records.
 - **Rules can go out of date.** Pesticide registrations change; the rule table must be re-audited periodically.
 - **Depends on external APIs.** Report generation needs internet access and the Gemini free tier, which has rate limits and changing model availability.
@@ -452,6 +549,12 @@ Key decisions that keep the advice safe:
 
 - **PlantVillage** dataset: maize and potato images.
 - **Jain (2026)** dataset: additional Indian crop images. *(Add full citation.)*
+- Field photos for stage 2 fine-tuning:
+  - **PlantDoc** (Singh et al., 2020; CC BY 4.0): maize and potato diseases.
+  - **Shabrina et al. (2024)**, Potato Leaf Disease Dataset in Uncontrolled Environment, Mendeley Data, doi:10.17632/ptz377bwb8.1: potato late blight and healthy (Indonesia).
+  - **Arya & Singh (2020)**, IARI, Mendeley Data, doi:10.17632/th422bg4yd.1: wheat leaf rust and healthy (India).
+  - **Getachew (2021)**, Mendeley Data, doi:10.17632/wgd66f8n6h.1 (CC BY 4.0): wheat stripe rust and healthy (Ethiopia).
+  - **Paddy Doctor** (Kaggle): rice blast, brown spot and healthy (India).
 - **Directorate of Plant Protection, Quarantine & Storage (PPQS)** and the **Central Insecticides Board & Registration Committee (CIBRC)**, Government of India: treatment and registration records.
 - **ICAR** guidance on integrated pest management.
 - [Ultralytics](https://github.com/ultralytics/ultralytics), [LangChain](https://www.langchain.com/), [ChromaDB](https://www.trychroma.com/), [Streamlit](https://streamlit.io/), [Google Gemini](https://ai.google.dev/) and [Open-Meteo](https://open-meteo.com/).
