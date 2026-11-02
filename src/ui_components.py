@@ -110,9 +110,10 @@ def hero(model_name):
         <div class="hero-text">
             <div class="hero-top">
                 <span class="hero-live"><span class="hero-dot"></span>LIVE · {escape(model_name)}</span>
-                <p class="hero-eyebrow">ICAR / CIBRC compliance-aware advisory</p>
+                <p class="hero-eyebrow">Plant Disease Safe-RAG Advisory</p>
             </div>
-            <h1>Plant Disease <span class="hero-grad">Safe-RAG</span> Advisory</h1>
+            <h1>Leaf<span class="hero-grad">Doc</span></h1>
+            <p class="hero-tagline">A doctor for your crops, in your pocket.</p>
             <p class="hero-lead">Upload a leaf photo to get an AI-assisted diagnosis, a regulatory safety check
             and treatment guidance grounded in verified sources.</p>
             <div class="hero-stats">
@@ -269,12 +270,12 @@ def mobile_header():
         <span class="m-logo" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
             stroke="#d6f0c8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14"/><path d="M5 19 13 11"/></svg></span>
-        <span class="m-title"><strong>Safe-RAG Advisory</strong>
+        <span class="m-title"><strong>LeafDoc</strong>
             <span class="m-live"><span class="hero-dot"></span>LIVE · YOLO11m field model</span></span>
         <button type="button" class="m-theme" aria-label="Switch between light and dark mode">{SUN_MOON}</button>
     </div>
     <div class="m-only m-intro">
-        <h1>Diagnose a leaf. Get <span>verified, safe</span> advice.</h1>
+        <h1>A doctor for your crops, <span>in your pocket.</span></h1>
         <p>AI diagnosis, a PPQS / CIBRC safety check and guidance in your language.</p>
         <div class="m-stats">{chips}</div>
     </div>
@@ -528,7 +529,8 @@ def sidebar():
                     <p class="about-name">Ryan Kekulthotuwage</p>
                 </div>
             </div>
-            <p class="about-meta">Final-year Computer Science dissertation</p>
+            <p class="about-meta"><strong>LeafDoc</strong> is the display name of <strong>Plant Disease Safe-RAG
+            Advisory</strong>, a final-year Computer Science dissertation.</p>
             <span class="about-badge">ICAR / CIBRC compliance standards</span>
         </div>
         <div class="side-card">

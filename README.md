@@ -1,4 +1,6 @@
-# 🌿 Plant Disease Safe-RAG Advisory System (India)
+# 🌿 LeafDoc: a doctor for your crops, in your pocket
+
+**LeafDoc** is the farmer-facing name of the **Plant Disease Safe-RAG Advisory System (India)**, the project name used in the dissertation.
 
 An AI-assisted crop disease advisor for Indian farmers. A farmer uploads a photo of a leaf; the system identifies the disease, checks treatment advice against verified Indian regulatory records (PPQS / CIBRC), and explains what to do in plain language, in English or one of ten Indian languages.
 

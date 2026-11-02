@@ -16,7 +16,7 @@ from src import weather_risk
 
 
 st.set_page_config(
-    page_title="Plant Disease Safe-RAG Advisory",
+    page_title="LeafDoc · A doctor for your crops, in your pocket",
     page_icon="🌿",
     layout="centered"
 )
