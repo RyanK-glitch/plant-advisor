@@ -254,7 +254,7 @@ Folders marked *(local only)* are listed in `.gitignore` and are not in the repo
 ├── runs/classify/crop_model_runs/
 │   ├── yolo11m_field_ft/
 │   │   └── weights/
-│   │       └── best.pt            # Stage 2 field model, loaded by the app
+│   │       └── best.pt            # Stage 2 field model, loaded by the app (download: v7 release)
 │   └── yolo11m_staples_480_split70/
 │       └── weights/
 │           └── best.pt            # Stage 1 lab model (starting point for stage 2)
@@ -333,7 +333,16 @@ GEMINI_API_KEY = "your-key-here"
 
 Alternatively, set it as an environment variable: `export GEMINI_API_KEY="your-key-here"`. Both `secrets.toml` and `.env` are already in `.gitignore`; never commit a real key.
 
-**5. Check the trained model is present** at `runs/classify/crop_model_runs/yolo11m_field_ft/weights/best.pt`. The reliability checks only switch on when the model is at this path, because `models/reliability.json` was calibrated for it. To use a model stored elsewhere, set:
+**5. Download the trained model.** The field model (104 MB) is too large for the repository, so it is attached to the [v7 release](https://github.com/RyanK-glitch/plant-advisor/releases/tag/v7):
+
+```bash
+curl -L --create-dirs -o runs/classify/crop_model_runs/yolo11m_field_ft/weights/best.pt \
+  https://github.com/RyanK-glitch/plant-advisor/releases/download/v7/yolo11m_field_ft-best.pt
+```
+
+SHA-256: `ba91748a2109b0f13aec2b26a22794a63b46d6c9fcf05fb4b87e6739b277062a` (check with `shasum -a 256 <file>`).
+
+Keep it at `runs/classify/crop_model_runs/yolo11m_field_ft/weights/best.pt`: the reliability checks only switch on when the model is at this path, because `models/reliability.json` was calibrated for it. To use a model stored elsewhere, set:
 
 ```bash
 export YOLO_MODEL_PATH="/full/path/to/best.pt"
